@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link href="dist/hamburgers.css" rel="stylesheet">
+
+	<style type="text/css">
+		:root {
+			--primary-color: #005DFF;
+			--accent-color: #FFF6BB;
+			--verify-color: #005DFF;
+			--header-height: 6%;
+		}
+		body, html {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+		}
+		#bg {
+			background-color: var(--primary-color);
+			clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -1;
+		}
+		/*#nav-bar {
+			position: fixed;
+			display: none;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: var(--primary-color);
+			clip-path: polygon(84.5% 6%, 100% 6%, 100% 100%, 63.8% 100%);
+			z-index: 6;
+		}*/
+		#nav-bar {
+			position: fixed;
+			display: none;
+			top: 6%;
+			right: 0;
+			width: 300px;
+			height: 100%;
+			padding: 0px 10px 10px 10px;
+			background-color: black;
+			z-index: 6;
+		}
+		#nav-bar ul {
+			list-style-type: none;
+			margin-right: 30px;
+			margin-top: 40px;
+			margin-bottom: 0px;
+		}
+		#nav-bar ul li {
+			display: none;
+			margin-bottom: 14px;
+			padding-bottom: 1px;
+			font-size: 1.3rem;
+			cursor: pointer;
+		}
+		#nav-bar ul li a {
+			text-decoration: none;
+			color: var(--primary-color);
+			transition: 0.1s;
+		}
+		#nav-bar ul li a:hover {
+			color: white;
+			border-bottom: 1px var(--primary-color) solid;
+		}
+		.stalk {
+			display: block;
+			position: relative;
+			background-color: var(--primary-color);
+			margin: 40px 60px 0px 70px;
+			padding: 7px 23px;
+			cursor: pointer;
+			transition: 0.2s;
+			text-decoration: none;
+			color: black;
+			font-size: 1.25rem;
+		}
+		.texti {
+			font-weight: bold;
+			font-size: 18px;
+			position: absolute;
+			left: 65px;
+			top: 10px;
+		}
+		header {
+			overflow: visible;
+			height: 6%;
+		}
+		#logo {
+			color: white;
+			text-decoration: none;
+			padding-left: 20px;
+			padding-right: 20px;
+			display: table-cell;
+			vertical-align: middle;
+			text-transform: uppercase;
+		}
+		.hamburger-container {
+			float: right;
+			height: 100%;
+			display: table;
+		}
+		.hamburger {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 5px 0 0 0;
+			margin: auto 0;
+		}
+		.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+			background-color: white;
+			height: 3.5px;
+		}
+		.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+		    background-color: white;
+		    height: 3px;
+		}
+		#logo::after {
+			clear: both;
+		}
+		#card {
+			background: white;
+			padding: 20px;
+			margin: 1em auto;
+			border-radius: 15px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+			width: 80%;
+		}
+		#card ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		#card ul li {
+			margin-bottom: 0px;
+			margin-top: 5px;
+		}
+		#card ul li span {
+			position: absolute;
+			content: ' ';
+			width: 30px;
+			height: 30px;
+			background-color: var(--primary-color);
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		#card ul li p {
+			display: inline-block;
+			margin-left: 40px;
+			margin-top: 6px;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+		#content {
+			color: white;
+			padding: 15px;
+			text-align: center;
+		}
+		#content h1 {
+			font-size: 3em;
+			margin-top: 10px;
+			text-transform: uppercase;
+		}
+		#content p {
+			font-size: 1.4em;
+		}
+		#content a {
+			color: var(--primary-color);
+			border-radius: 15px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: bold;
+			background-color: var(--accent-color);
+			display: block;
+			text-align: center;
+			margin: 50px 40px 0 40px;
+			padding: 20px;
+		}
+		@media only screen and (min-width: 600px) {
+			#bg {
+				/*clip-path: polygon(0 0, 85% 0, 65% 100%, 0 100%);*/
+				clip-path: polygon(100% 6%, 100% 0, 86% 0, 64% 100%, 0 100%, 0 6%);
+			}
+			header {
+				/*clip-path: polygon(85% 0, 100% 0, 100% 100%, 83.8% 100%);*/
+			}
+			#logo {
+				color: var(--primary-color);
+				font-weight: bold;
+			}
+			
+			main {
+				display: grid;
+				grid-template-columns: 50% auto;
+				grid-template-areas: "content card"
+			}
+			#card {
+				grid-area: card;
+				height: fit-content;
+				align-self: center;
+				margin: 1em;
+			}
+			#content {
+				grid-area: content;
+				text-align: left;
+				margin: 4em 0 0 4em;
+			}
+			#content h1 {
+				width: 30%;
+				font-size: 3.5em;
+				line-height: 0.9em;
+			}
+			#content a {
+				display: inline-block;
+				padding: 15px 60px;
+				margin-left: 0px;
+			}
+		}
+		
+		input {
+			padding: 10px;
+			width: 100%;
+			font-size: 17px;
+			font-family: Raleway;
+			border: 1px solid #aaaaaa;
+			box-sizing: border-box;
+		}
+		input.invalid {
+			background-color: #ffdddd;
+		}
+		.tabs {
+			width: 100%;
+		}
+		.tab:not(:first-of-type) {
+			display: none;
+		}
+		button {
+			background-color: var(--verify-color);
+			color: #ffffff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 17px;
+			font-family: Raleway;
+			cursor: pointer;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		.prevBtn {
+			background-color: #bbbbbb;
+		}
+		/* Make circles that indicate the steps of the form: */
+		.step {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbbbbb;
+			border: none; 
+			border-radius: 50%;
+			display: inline-block;
+			opacity: 0.5;
+			z-index: 2;
+		}
+
+		/* Mark the active step: */
+		.step.active {
+			opacity: 1;
+		}
+
+		/* Mark the steps that are finished and valid: */
+		.step.finish {
+			background-color: var(--verify-color);
+			cursor: pointer;
+		}
+		.pipe {
+			background-color: var(--verify-color);
+			display: inline-block;
+			height: 3px;
+			width: 13px;
+			margin: 0px -7px 5px -7px;
+			opacity: 0;
+			z-index: 1;	
+		}
+		.pipe.finish {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="bg"></div>
+
+	<div id="nav-bar">
+		<div class="list">
+			<ul>
+				<li><a href="#">Our Mission</a></li>
+				<li><a href="#">Our Products</a></li>
+				<li><a href="#">Our Contact Details</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</div>
+		
+		<a href="#" class="stalk">
+			<span>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+					</path>
+				</svg>
+			</span>
+			<span class="texti">Stalk us</span>
+		</a>
+	</div>
+
+	<header>
+		<div style="height: 100%; float: left; display: table;">
+			<a id="logo" href="#">LOGO</a>
+		</div>
+		<div class="hamburger-container">
+			<div class="hamburger hamburger--spin" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="card">
+			<!--
+			<ul>
+				<li>
+					<span></span>
+					<p>Random text</p>
+				</li>
+				<li>
+					<span></span>
+					<p>Random text</p>
+				</li>
+				<li>
+					<span></span>
+					<p>Random text</p>
+				</li>
+			</ul>
+		-->
+		
+
+		<h2>Verify the product..</h2>
+
+		<!-- One "tab" for each step in the form: -->
+		<div class="tabs">
+			<div class="tab">
+				<p><input placeholder="Enter company name" id="company_name" list="companies" oninput="change()"></p>
+				<datalist id="companies"></datalist>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab">
+				<p><input placeholder="Enter medicine name" id="medicine_name" list="medicines"></p>
+				<datalist id="medicines"></datalist>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+						<button type="button" class="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab">
+				<p><input placeholder="Enter batch number" id="batch_num"></p>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+						<button type="button" class="nextBtn" onclick="return false;">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Circles which indicates the steps of the form: -->
+		<div style="text-align: center; margin-top: 30px;">
+			<span class="step"></span>
+			<span class="pipe"></span>
+			<span class="step"></span>
+			<span class="pipe"></span>
+			<span class="step"></span>
+		</div>
+
+	
+		</section>
+		<section id="content">
+			<h1>Random stuff</h1>
+			<p>More random stuff goes here</p>
+
+			<a href="#">Some button</a>
+		</section>
+	</main>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		// Settings
+		let ch = $(".hamburger-container").height();
+		ch = ch + 5;
+		$(".hamburger-container").css({'width': ch + 'px'});
+
+		//Dynamic stuff
+		let tabs = document.getElementsByClassName("tab");
+		let currentTab = 0; // Current tab is set to be the first tab (0)
+		//showTab(currentTab); // Display the current tab
+		var company_name = null, medicine_name;
+		let company = ["a", "b", "s", ""];
+		let medicines = ["a", "b", "s", ""];
+		let medicine = {};
+
+		// Drawer stuff
+		$(".hamburger").click(function() {
+			$(this).toggleClass("is-active");
+			const nav = $("#nav-bar");
+			if(nav.css("display") == 'none') {
+				nav.show("slide", { direction: "right" }, 200);
+				items = nav.find("ul").children();
+				for(let i = 0; i < items.length; i++) {
+					items.eq(i).show("slide", { direction: "left" }, i * 75 + 325);
+				}
+			} else {
+				nav.hide('slide', {direction: 'right'}, 200);
+				nav.find("ul").children().hide();
+			}
+		});
+
+
+
+
+
+		for (let i = 0; i < company.length; i++) {
+			medicinet = [];
+			for (let j = 0; j < medicines.length; j++) {
+				medicinet.push(medicines[j] + company[i]);
+			}
+			medicine[company[i]] = medicinet;
+		}
+
+		populate("companies", company);
+		//addClicker();
+
+		function showTab(n) {
+			$(".tab").eq(n).fadeIn();
+			//$(".tab").eq(n).show('slide', {direction: 'right'}, 200);
+			//$(".tab").eq(n).hide('slide', {direction: 'right'}, 200);
+			tabs[currentTab].getElementsByTagName("input")[0].focus();
+			fixStepIndicator(n)
+		}
+
+		function nextPrev(n) {
+			if (n == 1 && !validateForm()) return false;
+			tcurrentTab = currentTab;
+			currentTab = currentTab + n;
+			if (currentTab >= tabs.length) {
+				document.getElementById("verForm").submit();
+				return false;
+			} else if (currentTab == 2) {
+				document.getElementById("batch_num").className = document.getElementById("batch_num").className.replace(" invalid", "");
+			} else if (n == -1 && currentTab == 1) {
+				document.getElementsByClassName("pipe")[1].className = document.getElementsByClassName("pipe")[1].className.replace(" finish", "");
+			} else if (!$(".step").eq(1).hasClass("finish") && currentTab == 0) {
+				document.getElementsByClassName("pipe")[0].className = document.getElementsByClassName("pipe")[0].className.replace(" finish", "");
+			}
+			tabs[tcurrentTab].style.display = "none";
+			//console.log("none");
+			//$(".tab").eq(tcurrentTab).fadeOut();
+			showTab(currentTab);
+		}
+
+		function change() {
+			if (company_name != document.getElementById("company_name").value) {
+				document.getElementsByClassName("step")[1].className = document.getElementsByClassName("step")[1].className.replace(" finish", "");
+				document.getElementsByClassName("pipe")[0].className = document.getElementsByClassName("pipe")[0].className.replace(" finish", "");
+			} else {
+				document.getElementsByClassName("step")[1].className += " finish";
+				document.getElementsByClassName("pipe")[0].className += " finish";
+			}
+		}
+
+		function addClicker() {
+			btns = document.getElementsByClassName("step finish");
+			for (let i = 0; i < btns.length; i++) {
+				btns[i].removeEventListener("click", function() {
+					nextPrev(i - currentTab);
+				});
+				btns[i].addEventListener("click", function() {
+					nextPrev(i - currentTab);
+				});
+			}
+		}
+
+		function validateForm() {
+			let valid = false;
+			tabs = document.getElementsByClassName("tab");
+			let y = tabs[currentTab].getElementsByTagName("input");
+			let text = y[0].value;
+
+			if (currentTab == 0) {
+				for (let i = 0; i < company.length; i++) {
+					if (text == company[i]) {
+						if (text != company_name) {
+							document.getElementById("medicine_name").value = "";
+							document.getElementById("medicine_name").className = document.getElementById("medicine_name").className.replace(" invalid", "");
+							document.getElementById("batch_num").value = "";
+							company_name = text;
+						}
+						populate("medicines", medicine[text]);
+						valid = true;
+						break;
+					}
+				}
+			} else if (currentTab == 1) {
+				for (let i = 0; i < medicine[company_name].length; i++) {
+					if (text == medicine[company_name][i]) {
+						valid = true;
+						break;
+					}
+				}
+			} else {
+			}
+			if (valid) {
+				document.getElementsByClassName("step")[currentTab].className += " finish";
+				document.getElementsByClassName("pipe")[currentTab].className += " finish";
+				y[0].className = y[0].className.replace(" invalid", "");
+			} else {
+				y[0].className += " invalid";
+				y[0].focus();
+			}
+			return valid;
+		}
+
+		function fixStepIndicator(n) {
+			let i, x = document.getElementsByClassName("step");
+			for (i = 0; i < x.length; i++) {
+				x[i].className = x[i].className.replace(" active", "");
+			}
+			x[n].className += " active";
+		}
+
+		function populate(identify, listi) {
+			let options = '';
+			for (let i = 0; i < listi.length; i++) {
+				options += '<option value="' + listi[i] + '" />';
+			}
+			document.getElementById(identify).innerHTML = options;
+		}
+	</script>
+</body>
+</html>

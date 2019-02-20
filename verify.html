@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="end">
+<head>
+	<title>Verify</title>
+
+	<style type="text/css">
+	/* Style the form */
+	:root{
+		--verify-color: #4CAF50;
+	}
+	#verForm {
+		background-color: #ffffff;
+		margin: 100px auto;
+		padding: 30px 40px 40px 40px;
+		width: 20%;
+		min-width: 250px;
+		border-radius: 20px;
+		box-shadow: 2px 4px 12px #888888;
+	}
+	#verForm h2 {
+		font-size: 1.8rem;
+	}
+	input {
+		padding: 10px;
+		width: 100%;
+		font-size: 17px;
+		font-family: Raleway;
+		border: 1px solid #aaaaaa;
+		box-sizing: border-box;
+	}
+	input.invalid {
+		background-color: #ffdddd;
+	}
+	.tabs {
+		width: 100%;
+	}
+	.tab:not(:first-of-type) {
+		display: none;
+	}
+	button {
+		background-color: var(--verify-color);
+		color: #ffffff;
+		border: none;
+		padding: 10px 20px;
+		font-size: 17px;
+		font-family: Raleway;
+		cursor: pointer;
+	}
+
+	button:hover {
+		opacity: 0.8;
+	}
+
+	.prevBtn {
+		background-color: #bbbbbb;
+	}
+	/* Make circles that indicate the steps of the form: */
+	.step {
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbbbbb;
+		border: none; 
+		border-radius: 50%;
+		display: inline-block;
+		opacity: 0.5;
+		z-index: 2;
+	}
+
+	/* Mark the active step: */
+	.step.active {
+		opacity: 1;
+	}
+
+	/* Mark the steps that are finished and valid: */
+	.step.finish {
+		background-color: var(--verify-color);
+		cursor: pointer;
+	}
+	.pipe {
+		background-color: var(--verify-color);
+		display: inline-block;
+		height: 3px;
+		width: 13px;
+		margin: 0px -7px 5px -7px;
+		opacity: 0;
+		z-index: 1;	
+	}
+	.pipe.finish {
+		opacity: 1;
+	}
+	</style>
+
+</head>
+<body>
+	<form id="verForm" action="">
+
+		<h2>Verify your medicine..</h2>
+
+		<!-- One "tab" for each step in the form: -->
+		<div class="tabs">
+			<div class="tab">
+				<p><input placeholder="Enter company name" id="company_name" list="companies" oninput="change()"></p>
+				<datalist id="companies"></datalist>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab">
+				<p><input placeholder="Enter medicine name" id="medicine_name" list="medicines"></p>
+				<datalist id="medicines"></datalist>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+						<button type="button" class="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab">
+				<p><input placeholder="Enter batch number" id="batch_num"></p>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+						<button type="button" class="nextBtn" onclick="return false;">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Circles which indicates the steps of the form: -->
+		<div style="text-align: center; margin-top: 30px;">
+			<span class="step"></span>
+			<span class="pipe"></span>
+			<span class="step"></span>
+			<span class="pipe"></span>
+			<span class="step"></span>
+		</div>
+
+	</form>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		let tabs = document.getElementsByClassName("tab");
+		let currentTab = 0; // Current tab is set to be the first tab (0)
+		//showTab(currentTab); // Display the current tab
+		var company_name = null, medicine_name;
+		let company = ["a", "b", "s", ""];
+		let medicines = ["a", "b", "s", ""];
+		let medicine = {};
+
+		for (let i = 0; i < company.length; i++) {
+			medicinet = [];
+			for (let j = 0; j < medicines.length; j++) {
+				medicinet.push(medicines[j] + company[i]);
+			}
+			medicine[company[i]] = medicinet;
+		}
+
+
+
+		populate("companies", company);
+		//addClicker();
+
+		function showTab(n) {
+			$(".tab").eq(n).fadeIn();
+			//$(".tab").eq(n).show('slide', {direction: 'right'}, 200);
+			//$(".tab").eq(n).hide('slide', {direction: 'right'}, 200);
+			tabs[currentTab].getElementsByTagName("input")[0].focus();
+			fixStepIndicator(n)
+		}
+
+		function nextPrev(n) {
+			if (n == 1 && !validateForm()) return false;
+			tcurrentTab = currentTab;
+			currentTab = currentTab + n;
+			if (currentTab >= tabs.length) {
+				document.getElementById("verForm").submit();
+				return false;
+			} else if (currentTab == 2) {
+				document.getElementById("batch_num").className = document.getElementById("batch_num").className.replace(" invalid", "");
+			} else if (n == -1 && currentTab == 1) {
+				document.getElementsByClassName("pipe")[1].className = document.getElementsByClassName("pipe")[1].className.replace(" finish", "");
+			} else if (!$(".step").eq(1).hasClass("finish") && currentTab == 0) {
+				document.getElementsByClassName("pipe")[0].className = document.getElementsByClassName("pipe")[0].className.replace(" finish", "");
+			}
+			tabs[tcurrentTab].style.display = "none";
+			//console.log("none");
+			//$(".tab").eq(tcurrentTab).fadeOut();
+			showTab(currentTab);
+		}
+
+		function change() {
+			if (company_name != document.getElementById("company_name").value) {
+				document.getElementsByClassName("step")[1].className = document.getElementsByClassName("step")[1].className.replace(" finish", "");
+				document.getElementsByClassName("pipe")[0].className = document.getElementsByClassName("pipe")[0].className.replace(" finish", "");
+			} else {
+				document.getElementsByClassName("step")[1].className += " finish";
+				document.getElementsByClassName("pipe")[0].className += " finish";
+			}
+		}
+
+		function addClicker() {
+			btns = document.getElementsByClassName("step finish");
+			for (let i = 0; i < btns.length; i++) {
+				btns[i].removeEventListener("click", function() {
+					nextPrev(i - currentTab);
+				});
+				btns[i].addEventListener("click", function() {
+					nextPrev(i - currentTab);
+				});
+			}
+		}
+
+		function validateForm() {
+			let valid = false;
+			tabs = document.getElementsByClassName("tab");
+			let y = tabs[currentTab].getElementsByTagName("input");
+			let text = y[0].value;
+
+			if (currentTab == 0) {
+				for (let i = 0; i < company.length; i++) {
+					if (text == company[i]) {
+						if (text != company_name) {
+							document.getElementById("medicine_name").value = "";
+							document.getElementById("medicine_name").className = document.getElementById("medicine_name").className.replace(" invalid", "");
+							document.getElementById("batch_num").value = "";
+							company_name = text;
+						}
+						populate("medicines", medicine[text]);
+						valid = true;
+						break;
+					}
+				}
+			} else if (currentTab == 1) {
+				for (let i = 0; i < medicine[company_name].length; i++) {
+					if (text == medicine[company_name][i]) {
+						valid = true;
+						break;
+					}
+				}
+			} else {
+			}
+			if (valid) {
+				document.getElementsByClassName("step")[currentTab].className += " finish";
+				document.getElementsByClassName("pipe")[currentTab].className += " finish";
+				y[0].className = y[0].className.replace(" invalid", "");
+			} else {
+				y[0].className += " invalid";
+				y[0].focus();
+			}
+			return valid;
+		}
+
+		function fixStepIndicator(n) {
+			let i, x = document.getElementsByClassName("step");
+			for (i = 0; i < x.length; i++) {
+				x[i].className = x[i].className.replace(" active", "");
+			}
+			x[n].className += " active";
+		}
+
+		function populate(identify, listi) {
+			let options = '';
+			for (let i = 0; i < listi.length; i++) {
+				options += '<option value="' + listi[i] + '" />';
+			}
+			document.getElementById(identify).innerHTML = options;
+		}
+	</script>
+</body>
+</html>
