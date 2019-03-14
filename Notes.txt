@@ -1,2 +1,5 @@
 crispy forms - better looking register forms
 LOGIN_REDIRECTED_URL
+
+https://startbootstrap.com/snippets/sign-in-split/
+https://bootstrapmade.com/demo/Bocor/
