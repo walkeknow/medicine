@@ -62,7 +62,7 @@ header {
     float: left;
     width: 100%;
     position: fixed;
-    z-index: 5;
+    z-index: 13;
     background: #fff;
     box-shadow: 0 20px 40px -40px #000;
     top: 0;
@@ -91,7 +91,7 @@ header {
 .header-bottom nav.main-menu ul.nav.navbar-nav > li a:hover, .header-bottom nav.main-menu ul.nav.navbar-nav > li a:focus, .header-bottom nav.main-menu ul.nav.navbar-nav > li a.active {
     color: #fff;
     background: #39b49b;
-    box-shadow: 5px 5px 0 0px #fff;
+    box-shadow: 3px 3px 0 0px #fff;
 }
 .header-top {
     float: left;
@@ -306,11 +306,11 @@ body.clinic_version .first-section h2 {
 .service-time {
     float: left;
     width: 100%;
-    min-height: 350px;
     margin-top: -350px;
     padding: 50px;
     color: #fff;
     position: relative;
+    border-radius: 10px;
 }
 .info-icon {
     float: left;
@@ -1251,11 +1251,12 @@ body.clinic_version .desc {
     width: 90%;
     margin: 0 5% 0;
     padding: 0;
+    height: 48px;
 }
 .typewrite {
     font-size: 24px;
     font-weight: 500;
-    margin-top:0;
+    margin-top: -10%;
 }
 .service-time {
     padding: 25px 20px 35px;
@@ -1296,7 +1297,7 @@ nav.main-menu .navbar-toggle {border: solid #fff 2px;}
 #googleMap {height: 540px !important;}
 .footer-info h3, .subcriber-info h3 {float: left;width: 100%;}
 .footer-info p {float: left;width: 100%;}
-    
+.text-contant {margin: -15px 10% 0;}
 }
 
 
@@ -1319,7 +1320,7 @@ nav.main-menu .navbar-toggle {border: solid #fff 2px;}
 .service-time {padding: 50px 25px;}
 .pricing-table-header h2 {font-size: 25px;}
 .pricing-table-features {padding: 0 10px 15px 0;}
-    
+.header-bottom {padding-bottom: 10px;}
 }
 
 @media (min-width:1001px) and (max-width:1199px) {  

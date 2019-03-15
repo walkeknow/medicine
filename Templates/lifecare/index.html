@@ -29,6 +29,89 @@
    <!-- Modernizer for Portfolio -->
    <script src="js/modernizer.js"></script>
    <!-- [if lt IE 9] -->
+
+   <!--
+   <style type="text/css">
+      :root {
+         --primary-color: #005DFF;
+         --accent-color: #FFF6BB;
+         --verify-color: #005DFF;
+         --header-height: 6%;
+      }
+      input {
+         padding: 10px;
+         width: 100%;
+         font-size: 17px;
+         font-family: Raleway;
+         color: black;
+         border: 1px solid #aaaaaa;
+         box-sizing: border-box;
+      }
+      input.invalid {
+         background-color: #ffdddd;
+      }
+      .tabs {
+         width: 100%;
+      }
+      .tab:not(:first-of-type) {
+         display: none;
+      }
+      button {
+         background-color: var(--verify-color);
+         color: #ffffff;
+         border: none;
+         padding: 10px 20px;
+         font-size: 17px;
+         font-family: Raleway;
+         color: black;
+         cursor: pointer;
+      }
+
+      button:hover {
+         opacity: 0.8;
+      }
+
+      .prevBtn {
+         background-color: #bbbbbb;
+      }
+      /* Make circles that indicate the steps of the form: */
+      .step {
+         height: 15px;
+         width: 15px;
+         margin: 0 2px;
+         background-color: #bbbbbb;
+         border: none; 
+         border-radius: 50%;
+         display: inline-block;
+         opacity: 0.5;
+         z-index: 2;
+      }
+
+      /* Mark the active step: */
+      .step.active {
+         opacity: 1;
+      }
+
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+         background-color: var(--verify-color);
+         cursor: pointer;
+      }
+      .pipe {
+         background-color: var(--verify-color);
+         display: inline-block;
+         height: 3px;
+         width: 13px;
+         margin: 0px -7px 5px -7px;
+         opacity: 0;
+         z-index: 1; 
+      }
+      .pipe.finish {
+         opacity: 1;
+      }
+   </style>
+   -->
+
    </head>
    <body class="clinic_version">
       <!-- LOADER -->
@@ -57,6 +140,10 @@
 						      <li><a data-scroll href="#testimonials">FAQs</a></li>
                         <li><a data-scroll href="#getintouch">Contact</a></li>
                      </ul>
+
+                     <ul class="nav navbar-nav" style="float: right">
+                        <li><a class="active" href="#a">Login</a></li>
+                     </ul>
                   </div>
                </nav>
             </div>
@@ -82,23 +169,73 @@
       <!-- end section -->
       <div id="time-table" class="time-table-section">
          <div class="container">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                <div class="row">
-                  <div class="service-time middle" style="background:#0071d1;">
-                     <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> 
-                     <h3>Working Hours</h3>
-                     <div class="time-table-section">
-                        <ul>
-                           <li><span class="left">Monday - Friday</span><span class="right">8.00 – 18.00</span></li>
-                           <li><span class="left">Saturday</span><span class="right">8.00 – 16.00</span></li>
-                           <li><span class="left">Sunday</span><span class="right">8.00 – 13.00</span></li>
-                        </ul>
+                  <div class="service-time middle rounded-circle" style="background:#0071d1;">
+                     <h3>Verify</h3>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 1em">
+                        <div class="row">
+                           <div class="form-group">
+                              <input type="text" id="batch" placeholder="Batch number"  />
+                           </div>
+                        </div>
                      </div>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                           <div class="form-group">
+                              <div class="center"><button class="btn btn-light btn-radius btn-brd grd1 effect-1">Submit</button></div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!--
+                     <div class="tabs">
+                        <div class="tab">
+                           <p><input placeholder="Enter company name" id="company_name" list="companies" oninput="change()"></p>
+                           <datalist id="companies"></datalist>
+                           <div style="overflow:auto;">
+                              <div style="float:right;">
+                                 <button type="button" class="nextBtn btn btn-light btn-radius btn-brd grd1 effect-1" onclick="nextPrev(1)">Next</button>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="tab">
+                           <p><input placeholder="Enter medicine name" id="medicine_name" list="medicines"></p>
+                           <datalist id="medicines"></datalist>
+                           <div style="overflow:auto;">
+                              <div style="float:right;">
+                                 <button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+                                 <button type="button" class="nextBtn" onclick="nextPrev(1)">Next</button>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="tab">
+                           <p><input placeholder="Enter batch number" id="batch_num"></p>
+                           <div style="overflow:auto;">
+                              <div style="float:right;">
+                                 <button type="button" class="prevBtn" onclick="nextPrev(-1)" tabindex="-1">Previous</button>
+                                 <button type="button" class="nextBtn" onclick="return false;">Submit</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div style="text-align: center; margin-top: 30px;">
+                        <span class="step"></span>
+                        <span class="pipe"></span>
+                        <span class="step"></span>
+                        <span class="pipe"></span>
+                        <span class="step"></span>
+                     </div>
+                     -->
+                     
                   </div>
                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
          </div>
       </div>
       <div id="about" class="section wow fadeIn">
@@ -174,7 +311,7 @@
                </div>
             </div>
             -->
-            <!-- end row -->
+            
          </div>
          <!-- end container -->
       </div>
@@ -592,5 +729,6 @@
       <script src="js/custom.js"></script>
       <!-- map -->
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+
    </body>
 </html>
