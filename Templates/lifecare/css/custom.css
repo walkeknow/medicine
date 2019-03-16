@@ -1114,6 +1114,22 @@ nav.main-menu .navbar-toggle {
     font-weight: 500;
     margin-right: 5px;
 }   
+.caret1 {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid white;
+    margin-left: 0.5em;
+    display: inline-block;
+    margin-bottom: 0.14em;
+}
+.navbar-nav>li>.dropdown-menu {
+    background: #0071d1;
+    border: 0;
+}
+.dropdown-item {
+    display: block;
+    padding: 10px 18px !important;
+}
 
 /** mobile **/
 
