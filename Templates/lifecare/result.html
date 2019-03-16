@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site Metas -->
+   <title>Life Care - Responsive HTML5 Multi Page Template</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="style.css">
+   <!-- Colors CSS -->
+   <link rel="stylesheet" href="css/colors.css">
+   <!-- ALL VERSION CSS -->
+   <link rel="stylesheet" href="css/versions.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/custom.css">
+   <!-- Modernizer for Portfolio -->
+   <script src="js/modernizer.js"></script>
+
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+      </div>
+      <!-- END LOADER -->
+      <header>
+         <div class="header-top fadeIn">
+            <div class="container">
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+         </div>
+         <div class="header-bottom fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+              
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a data-scroll href="#about">About us</a></li>
+                        <li><a data-scroll href="#service">Services</a></li>
+                        <li><a data-scroll href="#doctors">Team</a></li>
+                        <li><a data-scroll href="#testimonials">FAQs</a></li>
+                        <li><a data-scroll href="#getintouch">Contact</a></li>
+                     </ul>
+
+                     <ul class="nav navbar-nav" style="float: right">
+                        <li><a class="active" href="#a">Login</a></li>
+                        <li class="dropdown">
+                           <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options<div class="caret1"></div></a>
+                           <div class="dropdown-menu">
+                             <a class="dropdown-item" href="#">Upload</a>
+                             <a class="dropdown-item" href="#">Logout</a>
+                           </div>
+                      </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+
+      <div class="services" style="position: absolute; height: inherit; padding-bottom: 0;">
+         <div class="container">
+            <div class="heading heading-white" style="margin-top: 80px;">
+               <h2 style="color: white;">Results</h2>
+            </div>
+            <div class="row">
+               <div class="col-md-6 col-xs-12">
+                  <div class="pane">
+                     <div class="row text-center"><h3>You searched for: #batchno</h3></div>
+                     <hr class="hr">
+                     <div id="results" class="row text-center"></div>
+                     
+                     <div class="row product">
+                        <div class="col-xs-12">
+                           <div class="row">Product name: Need to make this dynamic</div>
+                           <div class="row">MRP:</div>
+                           <div class="row">Batch No:</div>
+                        </div>
+                     </div>
+
+                     <div class="row product">
+                        <div class="col-xs-12">
+                           <div class="row">Product name:</div>
+                           <div class="row">MRP:</div>
+                           <div class="row">Batch No:</div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+               <div class="col-md-6 col-xs-12">
+                  <div class="pane">
+                     <div class="row">
+                        <h4 class="text-center" style="margin-bottom: 5px">
+                           No results found?<br>
+                           Or you cannot see your product here?<br><br>
+                           Check if the company is affilitiated with us!
+                        </h4>
+                     </div>
+                     <div id="result_company" class="row text-center"></div>
+                     <div class="row">
+                        <div class="form-group">
+                           <input placeholder="Enter company name" id="company_name" list="companies" oninput="change()">
+                           <datalist id="companies"></datalist> 
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="pane" style="min-height: 230px;">
+                     <h3 class="text-center">Verify another product</h3>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 1em">
+                        <div class="row">
+                           <div class="form-group">
+                              <input type="text" id="batch" placeholder="Batch number">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                           <div class="form-group">
+                              <div class="center"><button class="btn btn-light btn-radius btn-brd grd1 effect-1">Submit</button></div>
+                           </div>
+                        </div>
+                     </div>                     
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row" style="margin-top: 80px;">
+            <div class="copyright-area wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-8">
+                        <div class="footer-text">
+                           <p>© 2018. Distributed by <a id="tw" href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="social">
+                           <ul class="social-links">
+                              <li><a href=""><i class="fa fa-rss"></i></a></li>
+                              <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                              <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                              <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                              <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                              <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      
+
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="js/all.js"></script>
+      <!-- all plugins -->
+      <script src="js/custom.js"></script>
+
+      <script>
+
+         document.getElementById("results").innerHTML = "2 products found";
+
+         let company = ["a", "b", "s", ""];
+
+         populate("companies", company);
+
+         function populate(identify, listi) {
+            let options = '';
+            for (let i = 0; i < listi.length; i++) {
+               options += '<option value="' + listi[i] + '" />';
+            }
+            document.getElementById(identify).innerHTML = options;
+         }
+
+         function change() {
+            if (document.getElementById("company_name").value != "") {
+               let flag = true;
+               company.some( function(ele) {
+                  if (document.getElementById("company_name").value == ele) {
+                     comp("Company affilitiated", "#00ff33");
+                     flag = false;
+                     return true;
+                  }
+               });
+               if(flag) {
+                  comp("Company not affilitiated", "red");
+               }
+            } else {
+               comp("", "white");
+            }
+            
+            
+         }
+
+         function comp(text, color) {
+            document.getElementById("result_company").innerHTML = text;
+            document.getElementById("result_company").style.borderColor = color;
+            document.getElementById("result_company").style.color = color;
+         }
+      </script>
+   </body>
+</html>

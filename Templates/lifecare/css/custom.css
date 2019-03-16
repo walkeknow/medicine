@@ -1131,6 +1131,37 @@ nav.main-menu .navbar-toggle {
     padding: 10px 18px !important;
 }
 
+.pane {
+    background: #0071d1;
+    padding: 40px 40px;
+    margin: 0 1em 30px 1em;
+    border-radius: 0.5em;
+}
+.pane h3, .pane h4 {
+    color: white;
+}
+#results {
+    color: white;
+}
+#result_company {
+    color: white;
+    margin-bottom: 5px;
+    border: 1px white solid;
+}
+.product {
+    background: white;
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 10px; 
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .5rem;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
 /** mobile **/
 
 @media (max-width:767px) {
@@ -1292,6 +1323,9 @@ body.clinic_version .desc {
 .dmtop {
     right: 20px;
 }  
+.heading-white {
+    margin-top: 30px !important;
+}
 }
 
 @media (min-width:768px) and (max-width:991px) {
