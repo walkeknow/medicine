@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site Metas -->
+   <title>Life Care - Responsive HTML5 Multi Page Template</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="style.css">
+   <!-- Colors CSS -->
+   <link rel="stylesheet" href="css/colors.css">
+   <!-- ALL VERSION CSS -->
+   <link rel="stylesheet" href="css/versions.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/custom.css">
+   <!-- Modernizer for Portfolio -->
+   <script src="js/modernizer.js"></script>
+
+   <style>
+      :root {
+        --input-padding-x: 2.25rem;
+        --input-padding-y: 1.5rem;
+      }
+      html { overflow-y: hidden; }
+      .login {
+         margin-top: 22vh;
+      }
+
+      .bg-image {
+        background-image: url('images/bg-image.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 89vh;
+      }
+
+      @media (max-width:991px) {
+         .bg-image {
+            display: none;
+         }
+      }
+
+      .login-heading {
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        font-size: 24px;
+        margin-left: -1vw;
+      }
+
+      .form-label-group {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .form-label-group>input,
+      .form-label-group>label {
+        padding: var(--input-padding-y) var(--input-padding-x);
+        height: auto;
+        border-radius: 3rem;
+      }
+
+      .form-label-group > input {
+         margin-bottom: 1.25rem;
+      }
+
+      .form-label-group>label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+        line-height: 1.5;
+        color: grey;
+        cursor: text;
+        font-weight: 400;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        transition: all .1s ease-in-out;
+      }
+
+      .form-label-group input::-webkit-input-placeholder {
+        color: transparent;
+      }
+
+      .form-label-group input:-ms-input-placeholder {
+        color: transparent;
+      }
+
+      .form-label-group input::-ms-input-placeholder {
+        color: transparent;
+      }
+
+      .form-label-group input::-moz-placeholder {
+        color: transparent;
+      }
+
+      .form-label-group input::placeholder {
+        color: transparent;
+      }
+
+      .form-label-group input:not(:placeholder-shown) {
+        padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+        padding-bottom: calc(var(--input-padding-y) / 3);
+      }
+
+      .form-label-group input:not(:placeholder-shown)~label {
+        padding-top: calc(var(--input-padding-y) / 3);
+        padding-bottom: calc(var(--input-padding-y) / 3);
+        font-size: 12px;
+        color: #777;
+      }
+      .custom-control-label {
+         position: relative;
+         margin-bottom: 1rem;
+         vertical-align: top;
+         margin-left: 0.5rem;
+      }
+
+      .cbx {
+        -webkit-perspective: 20;
+        perspective: 20;
+        border: 2px solid #e8e8eb;
+        background: #e8e8eb;
+        border-radius: 4px;
+        transform: translate3d(0, 0, 0);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: 0.25rem;
+      }
+      .cbx:hover {
+        border-color: #0b76ef;
+      }
+      .flip {
+        display: block;
+        transition: all 0.4s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+      #cbx {
+        display: none;
+      }
+      #cbx:checked + .cbx {
+        border-color: #0b76ef;
+      }
+      #cbx:checked + .cbx .flip {
+        transform: rotateY(180deg);
+      }
+      .front,
+      .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+      }
+      .front {
+        background: #fff;
+        z-index: 1;
+      }
+      .back {
+        transform: rotateY(180deg);
+        background: #0b76ef;
+        text-align: center;
+        color: #fff;
+        line-height: 20px;
+        box-shadow: 0 0 0 1px #0b76ef;
+      }
+      .back svg {
+        margin-top: 3px;
+        fill: none;
+      }
+      .back svg path {
+        stroke: #fff;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+
+   </style>
+
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+      </div>
+      <!-- END LOADER -->
+      <header>
+         <div class="header-top fadeIn">
+            <div class="container">
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+         </div>
+         <div class="header-bottom fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+              
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a data-scroll href="index.html#about">About us</a></li>
+                        <li><a data-scroll href="index.html#service">Services</a></li>
+                        <li><a data-scroll href="index.html#doctors">Team</a></li>
+                        <li><a data-scroll href="index.html#testimonials">FAQs</a></li>
+                        <li><a data-scroll href="index.html#getintouch">Contact</a></li>
+                     </ul>
+
+                     <ul class="nav navbar-nav" style="float: right">
+                        <li><a class="active" href="#a">Login</a></li>
+                        <li class="dropdown">
+                           <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options<div class="caret1"></div></a>
+                           <div class="dropdown-menu">
+                             <a class="dropdown-item" href="#">Upload</a>
+                             <a class="dropdown-item" href="#">Logout</a>
+                           </div>
+                      </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+
+
+      <div class="container" style="margin-top: 8%;">
+        <div class="row">
+          <div class="d-none col-md-4 col-lg-6 bg-image">
+
+          </div>
+          <div class="col-xs-12 col-md-8 col-lg-6">
+            <div class="login">
+             <div class="row">
+               <div class="col-xs-12">
+                 <h3 class="login-heading text-center">Welcome back!</h3>
+                 <form>
+                   <div class="form-label-group">
+                     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                     <label for="inputEmail">Email address</label>
+                   </div>
+
+                   <div class="form-label-group">
+                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                     <label for="inputPassword">Password</label>
+                   </div>
+
+                   <div class="custom-control">
+                     <input id="cbx" type="checkbox"/>
+                     <label class="cbx" for="cbx">
+                       <div class="flip">
+                         <div class="front"></div>
+                         <div class="back">
+                           <svg width="16" height="14" viewBox="0 0 16 14">
+                             <path d="M2 8.5L6 12.5L14 1.5"></path>
+                           </svg>
+                         </div>
+                       </div>
+                     </label>
+                     <label class="custom-control-label" for="customCheck1">Remember password</label>
+                   </div>
+
+                   <button class="btn btn-lg btn-block btn-light btn-radius btn-brd grd1 effect-1 mb-2" type="submit">Sign in</button>
+                   <div class="text-center" style="margin-top: 0.75rem;">
+                     <a class="small" style="color: #337ab7;" href="#">Forgot password?</a></div>
+                 </form>
+               </div>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+      
+      <!-- all js files -->
+      <script src="js/all.js"></script>
+      <!-- all plugins -->
+      <script src="js/custom.js"></script>
+   </body>
+</html>
