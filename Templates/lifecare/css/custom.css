@@ -1183,6 +1183,11 @@ header {
     position: relative;
     right: 10px;
 }
+.result-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 .right-header {
     display: none;
 }
