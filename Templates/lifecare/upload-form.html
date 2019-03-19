@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site Metas -->
+   <title>Life Care - Responsive HTML5 Multi Page Template</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="style.css">
+   <!-- Colors CSS -->
+   <link rel="stylesheet" href="css/colors.css">
+   <!-- ALL VERSION CSS -->
+   <link rel="stylesheet" href="css/versions.css">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/custom.css">
+   <!-- Modernizer for Portfolio -->
+   <script src="js/modernizer.js"></script>
+
+   <style type="text/css">
+      :root {
+         --primary-color: #157fda;
+         --accent-color: #FFF6BB;
+      }
+      html, body { height: 100%; width: 100%; margin: 0; }
+      body {
+         overflow: visible;
+      }
+      #side-bar {
+         width: 24%;
+         position: fixed;
+         background-color: yellow;
+         height: 100%;
+         top: 6%;
+         left: 0;
+         padding: 10px;
+      }
+      #main-container {
+         column-count: 2;
+         column-gap: 15px;
+         margin-top: 145px;
+         padding-left: 5vw;
+         padding-right: 5vw;
+      }
+      @media (max-width: 767px) {
+         #main-container {
+             margin-top: 75px !important;
+         }
+      }
+      @media (max-width: 1000px) {
+         #main-container {
+            padding-left: 1vw;
+            padding-right: 1vw;
+         }
+      }
+      .medicine-container {
+         position: relative;
+         break-inside: avoid;
+         padding: 20px;
+         border-radius: 15px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+         margin-bottom: 20px;
+         border: 2px white solid;
+         min-width: 225px;
+         transform: matrix(0.001, 0, 0, 1, 0, 0);
+         transition: 0.2s;
+      }
+      .medicine-container::after {
+         content: '';
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         height: 30px;
+      }
+      .content {
+         z-index: 1;
+      }
+      .done {
+         display: none;
+         z-index: 2;
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+      .done div {
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         background-color: grey;
+         opacity: 0.1;
+         position: absolute;
+         border-radius: 15px;
+      }
+      .batches {
+         display: block;
+      }
+      input {
+         display: block;
+         padding: 10px;
+         width: 100%;
+         font-size: 17px;
+         font-family: Raleway;
+         border: 1px solid #aaaaaa;
+         box-sizing: border-box;
+         margin-bottom: 10px;
+         color: black;
+      }
+      button {
+         background-color: var(--primary-color);
+         color: #ffffff;
+         border: none;
+         padding: 9.5px 20px;
+         font-size: 17px;
+         font-family: Raleway;
+         cursor: pointer;
+      }
+      button:hover {
+         opacity: 0.8;
+      }
+      .med-close {
+         display: none;
+      }
+      .checkmark__circle {
+         stroke-dasharray: 166;
+         stroke-dashoffset: 166;
+         stroke-width: 2;
+         stroke-miterlimit: 10;
+         stroke: #7ae342;
+         fill: none;
+         animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
+
+      .checkmark {
+         width: 56px;
+         height: 56px;
+         border-radius: 50%;
+         display: block;
+         stroke-width: 2;
+         stroke: #fff;
+         stroke-miterlimit: 10;
+         vertical-align: middle;
+         box-shadow: inset 0px 0px 0px #7ae342;
+         animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+         z-index: 2;
+         position: absolute;
+         left: calc(50% - 28px);
+         top: calc(50% - 28px);
+      }
+
+      .checkmark__check {
+         transform-origin: 50% 50%;
+         stroke-dasharray: 48;
+         stroke-dashoffset: 48;
+         animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+      }
+
+      @keyframes stroke {
+         100% {
+            stroke-dashoffset: 0;
+         }
+      }
+      @keyframes scale {
+         0%, 100% {
+            transform: none;
+         }
+         50% {
+            transform: scale3d(1.1, 1.1, 1);
+         }
+      }
+      @keyframes fill {
+         100% {
+            box-shadow: inset 0px 0px 0px 30px #7ae342;
+         }
+      }
+
+      @media only screen and (max-width: 767px) {
+         #main-container {
+            column-count: 1;
+            
+         }
+      }
+   </style>
+
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+      </div>
+      <!-- END LOADER -->
+      <header>
+         <div class="header-top fadeIn">
+            <div class="container">
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+         </div>
+         <div class="header-bottom fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+              
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a data-scroll href="index.html#about">About us</a></li>
+                        <li><a data-scroll href="index.html#service">Services</a></li>
+                        <li><a data-scroll href="index.html#doctors">Team</a></li>
+                        <li><a data-scroll href="index.html#testimonials">FAQs</a></li>
+                        <li><a data-scroll href="index.html#getintouch">Contact</a></li>
+                     </ul>
+
+                     <ul class="nav navbar-nav" style="float: right">
+                        <li><a class="active" href="#a">Login</a></li>
+                        <li class="dropdown">
+                           <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options<div class="caret1"></div></a>
+                           <div class="dropdown-menu">
+                             <a class="dropdown-item" href="#">Upload</a>
+                             <a class="dropdown-item" href="#">Logout</a>
+                           </div>
+                      </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
+
+      <div id="main-container">
+      <div class="medicine-container">
+         <div class="content">
+            <input type="text" class="medicine-inp" placeholder="Medicine">
+            <input type="text" class="price-inp" placeholder="MRP">
+            <div class="batches">
+               <input type="text" class="batch-inp" placeholder="Batch">
+            </div>
+            <div class="footer-med" style="width: 100%">
+               <button class="med-submit">Submit</button>
+               <button class="med-close">Close</button>
+            </div>
+         </div>
+         <div class="done">
+            <div></div>
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+               <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+               <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+         </div>
+      </div>
+   </div>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script>
+      $(window).on('load', function() {
+         $("#preloader").on(500).fadeOut();
+         $(".preloader").on(600).fadeOut("slow");
+      });
+
+      jQuery(window).scroll(function() {
+         if (jQuery(this).scrollTop() > 1) {
+            jQuery('.dmtop').css({
+                bottom: "75px"
+            });
+         } else {
+            jQuery('.dmtop').css({
+                bottom: "-100px"
+            });
+         }
+      });
+
+      $(document).ready(function () {
+
+         $(".medicine-inp").keyup(function () {
+            updateMedicine($(this));
+         });
+         $(".batch-inp").keyup(function() {
+            updateBatch($(this));
+         })
+         $(".price-inp").keyup(function() {
+            updatePrice($(this));
+         })
+         $(".med-submit").click(function () {
+            submitData($(this));
+         })
+         $(".med-close").click(function () {
+            hideMedicine($(this).parent().parent().parent());
+         })
+
+         var tempmed = $(".medicine-container").clone(true, true);
+         var tempbat = $(".batch-inp").clone(true, true).hide();
+         $(".medicine-container").css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
+
+         function updateMedicine(current) {
+            let counter = 0;
+            let closer = null;
+            $(".medicine-inp").each(function () {
+               if($(this).val() == '') {
+                  let batches = $(this).parent().find(".batch-inp");
+                  let flag = true;
+                  batches.each(function() {
+                     if($(this).val() != '') {
+                        $(this).parent().parent().find(".med-close").show('fast');
+                        flag = false;
+                     }
+                  });
+                  if(flag) {
+                     counter += 1;
+                     closer = $(this);
+                  }
+               }
+               else {
+                  $(".medicine-inp").css({"background-color": "white"});
+                  $(this).parent().parent().find(".med-close").hide('fast');
+               }
+            });
+            
+            if(counter == 0) {
+               let temp = tempmed.clone(true, true);
+               $("#main-container").append(temp);
+               setTimeout(function () {
+                  temp.css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
+               }, 20);
+               
+            } else if (counter == 2) {
+               hideMedicine(closer.parent().parent());
+               return false;
+            }
+         }
+         function hideMedicine(current) {
+            current.css({"transform": "matrix(0.001, 0, 0, 1, 0, 0)"});
+            setTimeout( function() {
+               current.remove();
+            }, 210);
+         }
+
+         function updateBatch(current) {
+            let counter = 0;
+            current.parent().find(".batch-inp").each(function () {
+               if($(this).val() == '')
+                  counter += 1;
+               else
+                  current.parent().find(".batch-inp").css({"background-color": "white"});
+            });
+            
+
+            if(counter == 0) {
+               let temp = tempbat.clone(true, true);
+               current.parent().append(temp);
+               temp.show('fast');
+            } else if (counter == 2) {
+               current.parent().find(".batch-inp").each(function () {
+                  if($(this).val() == '') {
+                     hideBatch($(this));
+                     return false;
+                  }
+               });
+            }
+            /*
+            setTimeout(function() {
+               console.log(current.parent().parent().find(".medicine-inp").val(), current.parent().find(".batch-inp").length);
+               if(current.parent().parent().find(".medicine-inp").val() == undefined && current.parent().find(".batch-inp").length == 0) {
+                  hideBatch(current.parent().parent().parent());
+               }
+            }, 220);
+            */
+         }
+
+         function hideBatch(current) {
+            current.hide('fast');
+            setTimeout( function() {
+               current.remove();
+            }, 200);
+         }
+
+         function updatePrice(current) {
+            if(current.val() != '')
+               current.css({"background-color": "white"});
+         }
+
+         function submitData(current) {
+            current.focusout();
+            update = true;
+            let card = current.parent().parent().parent();
+            if(card.find(".medicine-inp").val() == '') {
+               update = false;
+               card.find(".medicine-inp").css({"background-color": "#ffdddd"});
+            }
+            if(card.find(".price-inp").val() == '') {
+               update = false;
+               card.find(".price-inp").css({"background-color": "#ffdddd"});
+            }
+            let batches = card.find(".batch-inp");
+            if(batches.length == 1) {
+               update = false;
+               batches.css({"background-color": "#ffdddd"});
+            } 
+
+            if (update) {
+               batches.each(function () {
+                  if($(this).val() == '') {
+                     hideBatch($(this));
+                     return false;
+                  }
+               });
+               setTimeout( function() {
+                  card.find(".done").show();
+               }, 100);
+
+               //Update data
+               name = card.find(".medicine-inp").val();
+               price = card.find(".price-inp").val();
+               tbatches = new Array();
+               batches.each(function() {
+                  tbatches.push($(this).val());
+               });
+               tbatches.pop();
+               console.log(name, price, tbatches);
+            }           
+         }
+
+         let prev = null;
+         $(document).on("click", function() {
+            if (prev != null)
+               prev.css({"border-color": "white"});
+            prev = $(event.target).parents(".medicine-container");
+            prev.css({"border-color": "var(--primary-color)"});
+         });
+      });
+
+   </script>
+      
+
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+   </body>
+</html>

@@ -29,6 +29,57 @@
    <!-- Modernizer for Portfolio -->
    <script src="js/modernizer.js"></script>
 
+   <style>
+      .excel-container {
+         width: 28%;
+         position: fixed;
+      }
+      .excel-file {
+         padding: 10px;
+         border: 2px dashed white;
+         border-radius: 5px;
+      }
+      .pane {
+         padding: 20px;
+      }
+      h1 {
+         color: white;
+      }
+      img {
+         width: 100%;
+         margin-bottom: 10px;
+      }
+      .upload {
+         padding: 10px 30px;
+         margin-top: 5px;
+         margin-bottom: 10px;
+      }
+      .upload:hover {
+         color: white;
+         background: -webkit-linear-gradient(left, #1d86df 0%, #39b49a 100%);
+         background: linear-gradient(to right, #1d86df 0%, #39b49a 100%)
+      }
+      #main-container {
+         margin-top: 155px;
+      }
+      @media (max-width: 767px) {
+         #main-container {
+             margin-top: 85px !important;
+         }
+      }
+      @media (max-width:1000px) {
+         .excel-container {
+            position: inherit;
+            width: 100%;
+            margin-left: 0;
+         }
+         .pane {
+            margin-left: 0;
+            margin-right: 0;
+         }
+      }
+   </style>
+
    </head>
    <body class="clinic_version">
       <!-- LOADER -->
@@ -75,9 +126,54 @@
       </header>
 
       
-      
+      <div class="container" id="main-container">
+         <div class="col-xs-12 col-md-4 col-lg-5">
+            <div class="pane excel-container">
+               <div class="excel-file text-center">
+                  <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>
+                  <hr class="hr">
+                  <button class="btn btn-light upload">Choose file</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xs-12 col-md-8 col-lg-7">
+            <div class="pane">
+               <h1>Step 1</h1>
+               <img src="images/clinic_01.jpg">
+               <h3>Some content which explains the step to be performed. Still thinking of some long text to put!</h3>
+            </div>
+
+            <div class="pane">
+               <h1>Step 1</h1>
+               <img src="images/clinic_01.jpg">
+               <h3>Some content which explains the step to be performed. Still thinking of some long text to put!</h3>
+            </div>
+
+            <div class="pane">
+               <h1>Step 1</h1>
+               <img src="images/clinic_01.jpg">
+               <h3>Some content which explains the step to be performed. Still thinking of some long text to put!</h3>
+            </div>
+
+            <div class="pane">
+               <h1>Step 1</h1>
+               <img src="images/clinic_01.jpg">
+               <h3>Some content which explains the step to be performed. Still thinking of some long text to put!</h3>
+            </div>
+
+            <div class="pane">
+               <h1>Step 1</h1>
+               <img src="images/clinic_01.jpg">
+               <h3>Some content which explains the step to be performed. Still thinking of some long text to put!</h3>
+            </div>
+         </div>
+
+         
+      </div>
 
       <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script>
          $(window).on('load', function() {
