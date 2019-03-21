@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- Site Metas -->
+    <title>PAAV - Product Authentication and Validation</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Site Icons -->
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'lifecare/images/fevicon.ico.png' %}" type="image/x-icon"/>
+
+    <link rel="apple-touch-icon" href="{% static 'lifecare/images/apple-touch-icon.png' %}">
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/style.css'%} ">
+    <!-- Colors CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/css/colors.css'%}">
+    <!-- ALL VERSION CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/css/versions.css'%}">
+    <!-- Responsive CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/css/responsive.css'%}">
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lifecare/css/custom.css'%}">
+    <!-- Modernizer for Portfolio -->
+    {% load static %}
+    <script src="{% static 'lifecare/js/modernizer.js'%}"></script>
+
+    {% block head %}{% endblock %}
+</head>
+<body class="clinic_version">
+<!-- LOADER -->
+<div id="preloader">
+    {% load static %}
+    <img class="preloader" src="{% static 'lifecare/images/loaders/heart-loading2.gif' %} " alt="">
+</div>
+<!-- END LOADER -->
+<header>
+    <div class="header-top fadeIn">
+        <div class="container">
+            {% load static %}
+            <a class="navbar-brand" href="{% url 'index' %}">
+                {% load static %}
+                <img src="{% static 'lifecare/images/logo.png' %}" alt="image"></a>
+        </div>
+        <div class="header-bottom fadeIn">
+            <div class="container">
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars"
+                                                                                                      aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                            <li><a data-scroll href="#about">About us</a></li>
+                            <li><a data-scroll href="#service">Services</a></li>
+                            <li><a data-scroll href="#doctors">Team</a></li>
+                            <li><a data-scroll href="#testimonials">FAQs</a></li>
+                            <li><a data-scroll href="#getintouch">Contact</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav" style="float: right">
+                            <li><a class="active" href="{% url 'login' %}">Login</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options
+                                    <div class="caret1"></div>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Upload</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %}
+    replace
+{% endblock %}
+</body>
+</html>

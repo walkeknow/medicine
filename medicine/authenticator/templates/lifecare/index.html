@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="text-contant">
+                        <h2>
+                            <a href="" class="typewrite" data-period="2000"
+                               data-type='[ "Welcome to PAAV", "Product Authentication And Verification", "Let us verify for you" ]'>
+                                <span class="wrap"></span>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end section -->
+    <div id="time-table" class="time-table-section">
+        <div class="container">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="service-time middle rounded-circle" style="background:#0071d1;">
+                        <h3>Verify</h3>
+                        <form action="{% url 'results' %}">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 1em">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input type="text" id="batch" placeholder="Batch number"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="center">
+                                            <button type="submit"
+                                                    class="btn btn-light btn-radius btn-brd grd1 effect-1">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+        </div>
+    </div>
+    <div id="about" class="section wow fadeIn">
+        <div class="container">
+            <div class="heading">
+                <h2>The Specialist Clinic</h2>
+            </div>
+            <!-- end title -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="message-box">
+                        <h4>What We Do</h4>
+                        <h2>Clinic Service</h2>
+                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim,
+                            non
+                            aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus
+                            bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis
+                            dis
+                            parturient montes, nascetur ridiculus mus. </p>
+                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn
+                            More</a>
+                    </div>
+                    <!-- end messagebox -->
+                </div>
+                <!-- end col -->
+                <div class="col-md-6">
+                    <div class="post-media wow fadeIn">
+                        {% load static %}
+                        <img src="{% static 'lifecare/images/about_03.jpg' %}" alt="" class="img-responsive">
+                        <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]"
+                           class="playbutton"><i
+                                class="flaticon-play-button"></i></a>
+                    </div>
+                    <!-- end media -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            <hr class="hr1">
+        </div>
+        <!-- end container -->
+    </div>
+    <div id="service" class="services wow fadeIn">
+        <div class="container">
+            <div class="heading heading-white">
+                <h2 style="color: white;">Our Other Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="inner-services">
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.clinicmanager.co.in/">
+                                  {% load static %}
+                                 <img src="{% static 'lifecare/images/clinic-manager.jpg' %}" alt="#"
+                                      class="img-rounded"/> </a></span>
+
+                                <h4>PREMIUM FACILITIES</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.digihealthcalculator.com/">
+                                   {% load static %}
+                                 <img src="{% static 'lifecare/images/calculator.jpg' %}" alt="#"
+                                      class="img-rounded"/> </a></span>
+
+                                <h4>LARGE LABORATORY</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.digihealthlocker.com/">
+                                   {% load static %}
+                                 <img src="{% static 'lifecare/images/digihealth-locker.jpg' %}" alt="#"
+                                      class="img-rounded"/> </a></span>
+
+                                <h4>DETAILED SPECIALIST</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.digihealthlocker.com/">
+                                   {% load static %}
+                                 <img src="{% static 'lifecare/images/vaxins.jpg' %}" alt="#" class="img-rounded"/>
+                                </a>
+                               </span>
+                                <h4>CHILDREN CARE CENTER</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.erx.co.in/">
+                                  {% load static %}
+                                  <img src="{% static 'lifecare/images/erx.jpg' %}" alt="#" class="img-rounded"/>
+                                </a>
+                               </span>
+                                <h4>FINE INFRASTRUCTURE</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="serv">
+                           <span class="icon-service">
+                              <a href="http://www.erhc.in/">
+                                   {% load static %}
+                                  <img src="{% static 'lifecare/images/' %}" alt="#"/></a>
+                           </span>
+                                <h4>ANYTIME BLOOD BANK</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+    <!-- doctor -->
+
+    <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;"
+         data-scroll-id="doctors" tabindex="-1">
+        <div class="container">
+
+            <div class="heading">
+                <h2>The Specialist Clinic</h2>
+            </div>
+
+            <div class="row dev-list text-center">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s"
+                     data-wow-delay="0.2s"
+                     style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="widget clearfix">
+                        {% load static %}
+                        <img src="{% static 'lifecare/images/doctor_01.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <div class="widget-title">
+                            <h3>Soren Bo Bostian</h3>
+                            <small>Clinic Owner</small>
+                        </div>
+                        <!-- end title -->
+                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
+
+                        <div class="footer-social">
+                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div><!--widget -->
+                </div><!-- end col -->
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s"
+                     data-wow-delay="0.4s"
+                     style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
+                    <div class="widget clearfix">
+                        {% load static %}
+                        <img src="{% static 'lifecare/images/doctor_02.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <div class="widget-title">
+                            <h3>Bryan Saftler</h3>
+                            <small>Internal Diseases</small>
+                        </div>
+                        <!-- end title -->
+                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
+
+                        <div class="footer-social">
+                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div><!--widget -->
+                </div><!-- end col -->
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
+                    <div class="widget clearfix">
+                        {% load static %}
+                        <img src="{% static 'lifecare/images/doctor_03.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <div class="widget-title">
+                            <h3>Matthew Bayliss</h3>
+                            <small>Orthopedics Expert</small>
+                        </div>
+                        <!-- end title -->
+                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
+
+                        <div class="footer-social">
+                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div><!--widget -->
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+    <!-- end doctor section -->
+
+    <div id="testimonials" class="section wb wow fadeIn" style="padding-top: 45px;">
+        <div class="container">
+            <div class="heading">
+                <h2>FAQs</h2>
+            </div>
+            <!-- end title -->
+            <div class="row">
+                <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div class="testimonial clearfix">
+                        <div class="desc">
+                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
+                            <p class="lead">They have got my project on time with the competition with a sed highly
+                                skilled,
+                                and experienced & professional team.</p>
+                        </div>
+                        <div class="testi-meta">
+                            {% load static %}
+                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt="" class="img-responsive alignleft">
+                            <h4>James Fernando
+                                <small>- Manager of Racer</small>
+                            </h4>
+                        </div>
+                        <!-- end testi-meta -->
+                    </div>
+                    <!-- end testimonial -->
+                </div>
+                <!-- end col -->
+                <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="testimonial clearfix">
+                        <div class="desc">
+                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
+                            <p class="lead">They have got my project on time with the competition with a sed highly
+                                skilled,
+                                and experienced & professional team.</p>
+                        </div>
+                        <div class="testi-meta">
+                            {% load static %}
+                            <img src="{% static 'lifecare/images/testi_02.png' %}" alt="" class="img-responsive alignleft">
+                            <h4>Andrew Atkinson
+                                <small>- Life Manager</small>
+                            </h4>
+                        </div>
+                        <!-- end testi-meta -->
+                    </div>
+                    <!-- end testimonial -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            <hr class="invis">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="testimonial clearfix">
+                        <div class="desc">
+                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
+                            <p class="lead">They have got my project on time with the competition with a sed highly
+                                skilled,
+                                and experienced & professional team.</p>
+                        </div>
+                        <div class="testi-meta">
+                            {% load static %}
+                            <img src="{% static 'lifecare/images/testi_03.png' %}" alt="" class="img-responsive alignleft">
+                            <h4>Amanda DOE
+                                <small>- Manager of Racer</small>
+                            </h4>
+                        </div>
+                        <!-- end testi-meta -->
+                    </div>
+                    <!-- end testimonial -->
+                </div>
+                <!-- end col -->
+                <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="testimonial clearfix">
+                        <div class="desc">
+                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
+                            <p class="lead">They have got my project on time with the competition with a sed highly
+                                skilled,
+                                and experienced & professional team.</p>
+                        </div>
+                        <div class="testi-meta">
+                            {% load static %}
+                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt="" class="img-responsive alignleft">
+                            <h4>Martin Johnson
+                                <small>- Founder of Goosilo</small>
+                            </h4>
+                        </div>
+                        <!-- end testi-meta -->
+                    </div>
+                    <!-- end testimonial -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end section -->
+    <div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
+        <div class="container">
+            <div class="heading">
+                <h2>Get in Touch</h2>
+            </div>
+        </div>
+        <div class="contact-section">
+            <div class="form-contant">
+                <form id="ajax-contact" action="assets/mailer.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group in_name">
+                                <input type="text" class="form-control" placeholder="Name" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="email" class="form-control" placeholder="E-mail" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                       required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group in_email">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                       required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group in_message">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Message"
+                                      required="required"></textarea>
+                            </div>
+                            <div class="actions">
+                                <input type="submit" value="Send Message" name="submit" id="submitButton"
+                                       class="btn small"
+                                       title="Submit Your Message!">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="googleMap" style="width:100%;height:450px;"></div>
+        </div>
+    </div>
+    <footer id="footer" class="footer-area wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="logo padding">
+                        {% load static %}
+                        <a href=""><img src="{% static 'lifecare/images/logo.png' %}" alt=""></a>
+                        <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche
+                            artisan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-info padding">
+                        <h3>CONTACT US</h3>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> A-202, East Wing, 2nd Floor, B. N.
+                            Agarwal
+                            Shaymkamal Co-op. Housing Soceity Ltd, Vile Parle (E), Mumbai - 400057</p>
+                        <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> 08433513351</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="subcriber-info">
+                        <h3>SUBSCRIBE</h3>
+                        <p>Get healthy news, tip and solutions to your problems from our experts.</p>
+                        <div class="subcriber-box">
+                            <form id="mc-form" class="mc-form">
+                                <div class="newsletter-form">
+                                    <input type="email" autocomplete="off" id="mc-email" placeholder="Email address"
+                                           class="form-control" name="EMAIL">
+                                    <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    <div class="clearfix"></div>
+                                    <!-- mailchimp-alerts Start -->
+                                    <div class="mailchimp-alerts">
+                                        <div class="mailchimp-submitting"></div>
+                                        <!-- mailchimp-submitting end -->
+                                        <div class="mailchimp-success"></div>
+                                        <!-- mailchimp-success end -->
+                                        <div class="mailchimp-error"></div>
+                                        <!-- mailchimp-error end -->
+                                    </div>
+                                    <!-- mailchimp-alerts end -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright-area wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="footer-text">
+                        <p>© 2018. Distributed by <a id="tw" href="https://themewagon.com/"
+                                                     target="_blank">ThemeWagon</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="social">
+                        <ul class="social-links">
+                            <li><a href=""><i class="fa fa-rss"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyrights -->
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- all js files -->
+    {% load static %}
+    <script src="{% static 'lifecare/js/all.js' %}"></script>
+    <!-- all plugins -->
+    {% load static %}
+    <script src="{% static 'lifecare/js/custom.js' %}"></script>
+    <!-- map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+
+{% endblock %}
