@@ -176,8 +176,10 @@
       <div id="main-container">
       <div class="medicine-container">
          <div class="content">
-            <input type="text" class="medicine-inp" placeholder="Medicine">
-            <input type="text" class="price-inp" placeholder="MRP">
+            <input type="text" class="medicine-inp" placeholder="Product / Brand name">
+            <input type="number" class="price-inp" placeholder="MRP">
+            <input type="text" class="pack-inp" placeholder="Packing">
+            <input type="date" class="date-inp" placeholder="Expiry date">
             <div class="batches">
                <input type="text" class="batch-inp" placeholder="Batch">
             </div>
@@ -210,6 +212,13 @@
          })
          $(".price-inp").keyup(function() {
             updatePrice($(this));
+         })
+         $(".pack-inp").keyup(function() {
+            updatePrice($(this));
+         })
+         $(".date-inp").change(function() {
+            if(Date.parse($(this).val()))
+               $(this).css({"background-color": "white"});
          })
          $(".med-submit").click(function () {
             submitData($(this));
@@ -321,6 +330,14 @@
                update = false;
                card.find(".price-inp").css({"background-color": "#ffdddd"});
             }
+            if(card.find(".pack-inp").val() == '') {
+               update = false;
+               card.find(".pack-inp").css({"background-color": "#ffdddd"});
+            }
+            if(card.find(".date-inp").val() == '') {
+               update = false;
+               card.find(".date-inp").css({"background-color": "#ffdddd"});
+            }
             let batches = card.find(".batch-inp");
             if(batches.length == 1) {
                update = false;
@@ -341,12 +358,14 @@
                // Update data
                tname = card.find(".medicine-inp").val();
                price = card.find(".price-inp").val();
+               pack = card.find("pack-inp").val();
+               edate = card.find("date-inp").val();
                tbatches = new Array();
                batches.each(function() {
                   tbatches.push($(this).val());
                });
                tbatches.pop();
-               console.log(tname, price, tbatches);
+               console.log(tname, price, pack, edate, tbatches);
             }
          }
 
