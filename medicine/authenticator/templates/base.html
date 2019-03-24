@@ -83,7 +83,8 @@
                                     <div class="caret1"></div>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Upload</a>
+                                    <a class="dropdown-item" href="{% url 'upload-excel' %}">Upload Excel</a>
+                                    <a class="dropdown-item" href="{% url 'upload-form' %}">Upload Form</a>
                                     <a class="dropdown-item" href="#">Logout</a>
                                 </div>
                             </li>
@@ -97,5 +98,11 @@
 {% block content %}
     replace
 {% endblock %}
+<!-- all js files -->
+{% load static %}
+<script src="{% static 'lifecare/js/all.js' %}"></script>
+<!-- all plugins -->
+{% load static %}
+<script src="{% static 'lifecare/js/custom.js' %}"></script>
 </body>
 </html>

@@ -14,6 +14,9 @@ def results(request):
     return render(request, 'lifecare/result.html')
 
 
-def upload(request):
-    return HttpResponse("<h2>Lmao, you actually thought "
-                        "this page was made?</h2>")
+def upload_form(request):
+    return render(request, 'lifecare/upload-form.html')
+
+
+def upload_excel(request):
+    return render(request, 'lifecare/upload-excel.html')
