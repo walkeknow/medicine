@@ -169,7 +169,7 @@
                            <span class="icon-service">
                               <a href="http://www.erhc.in/">
                                    {% load static %}
-                                  <img src="{% static 'lifecare/images/' %}" alt="#"/></a>
+                                  <img src="{% static 'lifecare/images/easyreach.jpg' %}" alt="#"/></a>
                            </span>
                                 <h4>ANYTIME BLOOD BANK</h4>
                                 <p>Lorem Ipsum is simply dummy text of the printing.</p>
@@ -484,10 +484,18 @@
         </div>
     </div>
     <!-- end copyrights -->
-    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
-
     <!-- map -->
+    <script>
+        function myMap() {
+            var uluru = {lat: 19.100179, lng: 72.844815};
+            
+            var map = new google.maps.Map(
+            document.getElementById('googleMap'), {zoom: 15, center: uluru});
+            
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+
 
 {% endblock %}

@@ -207,23 +207,3 @@ var TxtType = function(el, toRotate, period) {
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
     };
-
-/*== map js ==*/
-
-    function myMap() {
-        /*
-        var mapProp= {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        */
-        var uluru = {lat: 19.100179, lng: 72.844815};
-        
-        var map = new google.maps.Map(
-        document.getElementById('googleMap'), {zoom: 15, center: uluru});
-        
-        var marker = new google.maps.Marker({position: uluru, map: map});
-    }
-	
-/*== map js ==*/	

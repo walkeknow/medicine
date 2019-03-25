@@ -489,7 +489,7 @@ hr.hr1 {
     margin-bottom: 10px;
 }
 .icon-service img {
-    width: 310px;
+    width: 80%;
 }
 .inner-services {
     float: left;
@@ -1226,10 +1226,9 @@ header {
     font-weight: 700;
 }
 .header-bottom nav.main-menu ul.nav.navbar-nav > li a:hover, .header-bottom nav.main-menu ul.nav.navbar-nav > li a:focus, .header-bottom nav.main-menu ul.nav.navbar-nav > li a.active {
-    color: #222;
-    background: transparent;
-    box-shadow: none;
-}       
+    padding-left: 10px;
+}
+    
 .service-time {
     float: left;
     width: 100%;

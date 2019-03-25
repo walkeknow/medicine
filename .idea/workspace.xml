@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0252f425-86ec-4920-afe9-67de4df52a82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-excel.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-excel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-form.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +39,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/python3.6/site-packages/django/views/defaults.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
+            <state relative-caret-position="377">
               <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -113,7 +119,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="5">
     <option name="x" value="960" />
     <option name="y" value="25" />
     <option name="width" value="960" />
@@ -328,12 +334,20 @@
       <workItem from="1553452291531" duration="450000" />
       <workItem from="1553452919804" duration="1086000" />
       <workItem from="1553511736736" duration="5013000" />
-      <workItem from="1553519744435" duration="999000" />
+      <workItem from="1553519744435" duration="1298000" />
     </task>
+    <task id="LOCAL-00001" summary="Upgrade to Django 2.1.7 to fix bug&#10;&#10;Bug:&#10;OperationalError at /admin/polls/question/1/change/ no such table: main.auth_user__old Request">
+      <created>1553520770758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553520770758</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7548000" />
+    <option name="totallyTimeSpent" value="7847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="25" width="960" height="1055" extended-state="4" />
@@ -341,14 +355,14 @@
       <window_info id="Designer" order="0" />
       <window_info id="Learn" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.2379386" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.2379386" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32930845" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32930845" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32893288" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="4" visible="true" weight="0.32821077" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32930845" />
       <window_info anchor="bottom" id="Run" order="7" />
@@ -504,7 +518,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/python3.6/site-packages/django/views/defaults.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
+        <state relative-caret-position="377">
           <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
