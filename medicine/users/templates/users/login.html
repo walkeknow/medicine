@@ -40,7 +40,8 @@
             }
 
             .forgot {
-                color: white !important;
+                color: red !important;
+                background-color: white;
             }
         }
 
@@ -123,7 +124,8 @@
         }
 
         .forgot {
-            color: #337ab7;
+            color: red !important;
+            background-color: white;
         }
 
         .cbx {
@@ -221,20 +223,18 @@
                             <form method="POST">
                                 {% csrf_token %}
                                 <div class="form-label-group">
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                           required autofocus>
-                                    <label for="inputEmail">Email address</label>
+                                    <input type="text" id="inputEmail" class="form-control" placeholder="Email address"
+                                           required autofocus name="username">
+                                    <label for="inputEmail">Username</label>
                                 </div>
 
-                                {% if messages %}
-                                    <script>
-                                        console.log("worked!")
-                                    </script>
-                                {% endif %}
+                                <script>
+                                    console.log({{ error }})
+                                </script>
 
                                 <div class="form-label-group">
                                     <input type="password" id="inputPassword" class="form-control"
-                                           placeholder="Password"
+                                           placeholder="Password" name="password"
                                            required>
                                     <label for="inputPassword">Password</label>
                                 </div>
@@ -258,7 +258,7 @@
                                         type="submit">Sign in
                                 </button>
                                 <div class="text-center" style="margin-top: 0.75rem;">
-                                    <a class="small forgot" href="#">Forgot password?</a></div>
+                                    <a class="small forgot" href="#">{{ error }}</a></div>
                             </form>
                         </div>
                     </div>

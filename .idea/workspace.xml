@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0252f425-86ec-4920-afe9-67de4df52a82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-excel.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-excel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/upload-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/authenticator/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/authenticator/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/authenticator/static/lifecare/images/easyreach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,68 +14,73 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/authenticator/models.py">
+        <entry file="file://$PROJECT_DIR$/medicine/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="78">
+              <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/python3.6/site-packages/django/db/models/sql/__init__.py">
+        <entry file="file://$PROJECT_DIR$/medicine/medicine/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/python3.6/site-packages/django/views/defaults.py">
+        <entry file="file://$PROJECT_DIR$/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="390">
+              <caret line="213" column="6" lean-forward="true" selection-start-line="213" selection-start-column="6" selection-end-line="213" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/medicine/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/authenticator/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/authenticator/admin.py">
+        <entry file="file://$PROJECT_DIR$/medicine/authenticator/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-end-line="81" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/authenticator/apps.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/medicine/authenticator/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/medicine/authenticator/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="376">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -85,21 +88,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/medicine/medicine/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#224#233#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>small</find>
+      <find>forgot</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -107,12 +112,16 @@
       <list>
         <option value="$PROJECT_DIR$/authenticator/templates/lifecare/empty.html" />
         <option value="$PROJECT_DIR$/medicine/authenticator/static/lifecare/style.css" />
-        <option value="$PROJECT_DIR$/medicine/medicine/settings.py" />
-        <option value="$PROJECT_DIR$/medicine/medicine/urls.py" />
-        <option value="$PROJECT_DIR$/medicine/users/views.py" />
         <option value="$PROJECT_DIR$/medicine/authenticator/urls.py" />
-        <option value="$PROJECT_DIR$/medicine/users/templates/users/login.html" />
         <option value="$PROJECT_DIR$/medicine/authenticator/models.py" />
+        <option value="$PROJECT_DIR$/medicine/medicine/settings.py" />
+        <option value="$PROJECT_DIR$/medicine/users/templates/users/debug_login.html" />
+        <option value="$PROJECT_DIR$/medicine/users/templates/users/login.html" />
+        <option value="$PROJECT_DIR$/medicine/authenticator/templates/base.html" />
+        <option value="$PROJECT_DIR$/medicine/medicine/urls.py" />
+        <option value="$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html" />
+        <option value="$PROJECT_DIR$/medicine/users/views.py" />
+        <option value="$PROJECT_DIR$/medicine/authenticator/views.py" />
       </list>
     </option>
   </component>
@@ -153,7 +162,67 @@
               <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="authenticator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="authenticator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lifecare" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="authenticator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lifecare" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="authenticator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="authenticator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lifecare" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="users" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="users" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="medicine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Project" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="medicine" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="users" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="users" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -227,6 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -236,6 +306,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -334,7 +405,7 @@
       <workItem from="1553452291531" duration="450000" />
       <workItem from="1553452919804" duration="1086000" />
       <workItem from="1553511736736" duration="5013000" />
-      <workItem from="1553519744435" duration="1298000" />
+      <workItem from="1553519744435" duration="14198000" />
     </task>
     <task id="LOCAL-00001" summary="Upgrade to Django 2.1.7 to fix bug&#10;&#10;Bug:&#10;OperationalError at /admin/polls/question/1/change/ no such table: main.auth_user__old Request">
       <created>1553520770758</created>
@@ -343,11 +414,27 @@
       <option name="project" value="LOCAL" />
       <updated>1553520770758</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Complete user login with username and password">
+      <created>1553537053683</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553537053683</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7847000" />
+    <option name="totallyTimeSpent" value="20747000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="25" width="960" height="1055" extended-state="4" />
@@ -355,21 +442,21 @@
       <window_info id="Designer" order="0" />
       <window_info id="Learn" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.2379386" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.31030703" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32930845" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.49946582" weight="0.32930845" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32930845" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="4" visible="true" weight="0.32821077" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.28179824" visible="true" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="2" sideWeight="0.71820176" side_tool="true" visible="true" weight="0.32930845" />
+      <window_info anchor="bottom" id="Database Changes" order="3" weight="0.32930845" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49946582" weight="0.032930844" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32930845" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32930845" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="12" visible="true" weight="0.32930845" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
@@ -382,9 +469,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Upgrade to Django 2.1.7 to fix bug&#10;&#10;Bug:&#10;OperationalError at /admin/polls/question/1/change/ no such table: main.auth_user__old Request" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade to Django 2.1.7 to fix bug&#10;&#10;Bug:&#10;OperationalError at /admin/polls/question/1/change/ no such table: main.auth_user__old Request" />
+    <MESSAGE value="Complete user login with username and password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete user login with username and password" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/authenticator/static/lifecare/css/prettyPhoto.css" />
@@ -402,86 +518,11 @@
     <entry file="file://$PROJECT_DIR$/medicine/users/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/users/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/authenticator/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/medicine/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/users/templates/users/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1222">
-          <caret line="253" column="102" selection-start-line="253" selection-start-column="102" selection-end-line="253" selection-end-column="102" />
-          <folding>
-            <element signature="e#48#4934#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/users/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/medicine/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/medicine/users/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/medicine/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/medicine/authenticator/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/authenticator/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/medicine/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#224#233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/medicine/authenticator/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -492,13 +533,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/medicine/authenticator/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -519,10 +553,131 @@
     <entry file="file://$PROJECT_DIR$/lib/python3.6/site-packages/django/views/defaults.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/medicine/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/users/templates/users/debug_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/medicine/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="102" column="52" lean-forward="true" selection-start-line="102" selection-start-column="52" selection-end-line="102" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verify.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/medicine/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#224#233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/users/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/users/templates/users/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="127" column="36" lean-forward="true" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/users/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/static/lifecare/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/templates/lifecare/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/authenticator/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicine/medicine/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="213" column="6" lean-forward="true" selection-start-line="213" selection-start-column="6" selection-end-line="213" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,36 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <style>
+        .welcome {
+            pointer-events: none;
+        }
+    </style>
+{% endblock %}
+
+{% block navbar %}
+    <ul class="nav navbar-nav" style="float: right">
+        {% if not user.username %}
+            <li><a class="active" href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        {% if user.username %}
+            <li><a class=welcome>Welcome {{ user.username|title }}</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options
+                    <div class="caret1"></div>
+                </a>
+                {% csrf_token %}
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'upload-excel' %}">Upload Excel</a>
+                    <a class="dropdown-item" href="{% url 'upload-form' %}">Upload Form</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}
+
+
 {% block content %}
 
     <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4">
@@ -198,7 +229,8 @@
                      style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
                     <div class="widget clearfix">
                         {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_01.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <img src="{% static 'lifecare/images/doctor_01.jpg' %}" alt=""
+                             class="img-responsive img-rounded">
                         <div class="widget-title">
                             <h3>Soren Bo Bostian</h3>
                             <small>Clinic Owner</small>
@@ -220,7 +252,8 @@
                      style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
                     <div class="widget clearfix">
                         {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_02.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <img src="{% static 'lifecare/images/doctor_02.jpg' %}" alt=""
+                             class="img-responsive img-rounded">
                         <div class="widget-title">
                             <h3>Bryan Saftler</h3>
                             <small>Internal Diseases</small>
@@ -240,7 +273,8 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
                     <div class="widget clearfix">
                         {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_03.jpg' %}" alt="" class="img-responsive img-rounded">
+                        <img src="{% static 'lifecare/images/doctor_03.jpg' %}" alt=""
+                             class="img-responsive img-rounded">
                         <div class="widget-title">
                             <h3>Matthew Bayliss</h3>
                             <small>Orthopedics Expert</small>
@@ -279,7 +313,8 @@
                         </div>
                         <div class="testi-meta">
                             {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt="" class="img-responsive alignleft">
+                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
+                                 class="img-responsive alignleft">
                             <h4>James Fernando
                                 <small>- Manager of Racer</small>
                             </h4>
@@ -299,7 +334,8 @@
                         </div>
                         <div class="testi-meta">
                             {% load static %}
-                            <img src="{% static 'lifecare/images/testi_02.png' %}" alt="" class="img-responsive alignleft">
+                            <img src="{% static 'lifecare/images/testi_02.png' %}" alt=""
+                                 class="img-responsive alignleft">
                             <h4>Andrew Atkinson
                                 <small>- Life Manager</small>
                             </h4>
@@ -323,7 +359,8 @@
                         </div>
                         <div class="testi-meta">
                             {% load static %}
-                            <img src="{% static 'lifecare/images/testi_03.png' %}" alt="" class="img-responsive alignleft">
+                            <img src="{% static 'lifecare/images/testi_03.png' %}" alt=""
+                                 class="img-responsive alignleft">
                             <h4>Amanda DOE
                                 <small>- Manager of Racer</small>
                             </h4>
@@ -343,7 +380,8 @@
                         </div>
                         <div class="testi-meta">
                             {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt="" class="img-responsive alignleft">
+                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
+                                 class="img-responsive alignleft">
                             <h4>Martin Johnson
                                 <small>- Founder of Goosilo</small>
                             </h4>
@@ -488,10 +526,10 @@
     <script>
         function myMap() {
             var uluru = {lat: 19.100179, lng: 72.844815};
-            
+
             var map = new google.maps.Map(
-            document.getElementById('googleMap'), {zoom: 15, center: uluru});
-            
+                document.getElementById('googleMap'), {zoom: 15, center: uluru});
+
             var marker = new google.maps.Marker({position: uluru, map: map});
         }
     </script>
