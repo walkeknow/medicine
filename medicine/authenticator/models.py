@@ -5,7 +5,7 @@ from django.db import models
 class Login(models.Model):
     manufacturer_name = models.TextField(max_length=80)
     password = models.CharField(max_length=80)
-    username = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
 
 
 class Manufacturer(models.Model):
