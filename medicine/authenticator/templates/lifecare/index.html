@@ -14,7 +14,7 @@
             <li><a class="active" href="{% url 'login' %}">Login</a></li>
         {% endif %}
         {% if user.username %}
-            <li><a class=welcome>Welcome {{ user.username|title }}</a></li>
+{#            <li><a class=welcome>Welcome {{ user.username|title }}</a></li>#}
             <li class="dropdown">
                 <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options
                     <div class="caret1"></div>
@@ -40,7 +40,7 @@
                     <div class="text-contant">
                         <h2>
                             <a href="" class="typewrite" data-period="2000"
-                               data-type='[ "Welcome to PAAV", "Product Authentication And Verification", "Let us verify for you" ]'>
+                               data-type='[ "Welcome to PAAV {{ user.username|title }}", "Product Authentication And Verification", "Let us verify for you" ]'>
                                 <span class="wrap"></span>
                             </a>
                         </h2>
