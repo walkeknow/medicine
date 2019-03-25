@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="Django default" uuid="8da2d470-54c1-4a0a-ac4f-06406d7f9550">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
-      <introspection-schemas>*:@</introspection-schemas>
-    </data-source>
-  </component>
-</project>
