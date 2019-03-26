@@ -1,381 +1,436 @@
 {% extends 'base.html' %}
 
 {% block head %}
-   <style type="text/css">
-      :root {
-         --primary-color: #157fda;
-         --accent-color: #FFF6BB;
-      }
-      html, body { height: 100%; width: 100%; margin: 0; }
-      body {
-         overflow: visible;
-      }
-      #side-bar {
-         width: 24%;
-         position: fixed;
-         background-color: yellow;
-         height: 100%;
-         top: 6%;
-         left: 0;
-         padding: 10px;
-      }
-      #main-container {
-         column-count: 2;
-         column-gap: 15px;
-         margin-top: 145px;
-         padding-left: 5vw;
-         padding-right: 5vw;
-      }
-      @media (max-width: 767px) {
-         #main-container {
-             margin-top: 75px !important;
-         }
-      }
-      @media (max-width: 1000px) {
-         #main-container {
-            padding-left: 1vw;
-            padding-right: 1vw;
-         }
-      }
-      .medicine-container {
-         position: relative;
-         break-inside: avoid;
-         padding: 20px;
-         border-radius: 15px;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-         margin-bottom: 20px;
-         border: 2px white solid;
-         min-width: 225px;
-         transform: matrix(0.001, 0, 0, 1, 0, 0);
-         transition: 0.2s;
-      }
-      .medicine-container::after {
-         content: '';
-         position: absolute;
-         top: 100%;
-         left: 0;
-         width: 100%;
-         height: 30px;
-      }
-      .content {
-         z-index: 1;
-      }
-      .done {
-         display: none;
-         z-index: 2;
-         height: 100%;
-         width: 100%;
-         position: absolute;
-         top: 0;
-         left: 0;
-      }
-      .done div {
-         width: 100%;
-         height: 100%;
-         z-index: 1;
-         background-color: grey;
-         opacity: 0.1;
-         position: absolute;
-         border-radius: 15px;
-      }
-      .batches {
-         display: block;
-      }
-      input {
-         display: block;
-         padding: 10px;
-         width: 100%;
-         font-size: 17px;
-         font-family: Raleway;
-         border: 1px solid #aaaaaa;
-         box-sizing: border-box;
-         margin-bottom: 10px;
-         color: black;
-      }
-      button {
-         background-color: var(--primary-color);
-         color: #ffffff;
-         border: none;
-         padding: 9.5px 20px;
-         font-size: 17px;
-         cursor: pointer;
-      }
-      button:hover {
-         opacity: 0.8;
-      }
-      .med-close {
-         display: none;
-      }
-      .checkmark__circle {
-         stroke-dasharray: 166;
-         stroke-dashoffset: 166;
-         stroke-width: 2;
-         stroke-miterlimit: 10;
-         stroke: #7ae342;
-         fill: none;
-         animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-      }
+    <style type="text/css">
+        :root {
+            --primary-color: #157fda;
+            --accent-color: #FFF6BB;
+        }
 
-      .checkmark {
-         width: 56px;
-         height: 56px;
-         border-radius: 50%;
-         display: block;
-         stroke-width: 2;
-         stroke: #fff;
-         stroke-miterlimit: 10;
-         vertical-align: middle;
-         box-shadow: inset 0px 0px 0px #7ae342;
-         animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-         z-index: 2;
-         position: absolute;
-         left: calc(50% - 28px);
-         top: calc(50% - 28px);
-      }
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
 
-      .checkmark__check {
-         transform-origin: 50% 50%;
-         stroke-dasharray: 48;
-         stroke-dashoffset: 48;
-         animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-      }
+        body {
+            overflow: visible;
+        }
 
-      @keyframes stroke {
-         100% {
-            stroke-dashoffset: 0;
-         }
-      }
-      @keyframes scale {
-         0%, 100% {
-            transform: none;
-         }
-         50% {
-            transform: scale3d(1.1, 1.1, 1);
-         }
-      }
-      @keyframes fill {
-         100% {
-            box-shadow: inset 0px 0px 0px 30px #7ae342;
-         }
-      }
+        #side-bar {
+            width: 24%;
+            position: fixed;
+            background-color: yellow;
+            height: 100%;
+            top: 6%;
+            left: 0;
+            padding: 10px;
+        }
 
-      @media only screen and (max-width: 767px) {
-         #main-container {
-            column-count: 1;
+        #main-container {
+            column-count: 2;
+            column-gap: 15px;
+            margin-top: 145px;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
 
-         }
-      }
-   </style>
+        @media (max-width: 767px) {
+            #main-container {
+                margin-top: 75px !important;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            #main-container {
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+        }
+
+        .medicine-container {
+            position: relative;
+            break-inside: avoid;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            border: 2px white solid;
+            min-width: 225px;
+            transform: matrix(0.001, 0, 0, 1, 0, 0);
+            transition: 0.2s;
+        }
+
+        .medicine-container::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 30px;
+        }
+
+        .content {
+            z-index: 1;
+        }
+
+        .done {
+            display: none;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .done div {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: grey;
+            opacity: 0.1;
+            position: absolute;
+            border-radius: 15px;
+        }
+
+        .batches {
+            display: block;
+        }
+
+        input {
+            display: block;
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 9.5px 20px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .med-close {
+            display: none;
+        }
+
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #7ae342;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            vertical-align: middle;
+            box-shadow: inset 0px 0px 0px #7ae342;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+            z-index: 2;
+            position: absolute;
+            left: calc(50% - 28px);
+            top: calc(50% - 28px);
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #7ae342;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            #main-container {
+                column-count: 1;
+
+            }
+        }
+    </style>
 
 {% endblock %}
 
 
-    {% block content %}
-
-      <div id="main-container">
-      <div class="medicine-container">
-         <div class="content">
-            <input type="text" class="medicine-inp" placeholder="Product / Brand name">
-            <input type="number" class="price-inp" placeholder="MRP">
-            <input type="text" class="pack-inp" placeholder="Packing">
-            <input type="date" class="date-inp" placeholder="Expiry date">
-            <div class="batches">
-               <input type="text" class="batch-inp" placeholder="Batch">
+{% block content %}
+    <div id="main-container">
+        <div class="medicine-container">
+            <div class="content">
+                <form id="user_form">
+                    <input type="text" class="medicine-inp" placeholder="Product / Brand name" id="product_name">
+                    <input type="number" class="price-inp" placeholder="MRP" id="mrp">
+                    <input type="text" class="pack-inp" placeholder="Packing" id="packing">
+                    <input type="date" class="date-inp" placeholder="Expiry date" id="expiry">
+                    <div class="batches">
+                        <input type="text" class="batch-inp batch_number" placeholder="Batch number">
+                    </div>
+                    <div class="footer-med" style="width: 100%">
+                        <button class="med-submit" type="submit">Submit</button>
+                        <button class="med-close">Close</button>
+                    </div>
+                </form>
             </div>
-            <div class="footer-med" style="width: 100%">
-               <button class="med-submit">Submit</button>
-               <button class="med-close">Close</button>
+            <div class="done">
+                <div></div>
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
             </div>
-         </div>
-         <div class="done">
-            <div></div>
-            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-               <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-               <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-            </svg>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-   <script>
-      $(document).ready(function () {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
 
-         $(".medicine-inp").keyup(function () {
-            updateMedicine($(this));
-         });
-         $(".batch-inp").keyup(function() {
-            updateBatch($(this));
-         })
-         $(".price-inp").keyup(function() {
-            updatePrice($(this));
-         })
-         $(".pack-inp").keyup(function() {
-            updatePrice($(this));
-         })
-         $(".date-inp").change(function() {
-            if(Date.parse($(this).val()))
-               $(this).css({"background-color": "white"});
-         })
-         $(".med-submit").click(function () {
-            submitData($(this));
-         })
-         $(".med-close").click(function () {
-            hideMedicine($(this).parent().parent().parent());
-         })
+            $(".medicine-inp").keyup(function () {
+                updateMedicine($(this));
+            });
+            $(".batch-inp").keyup(function () {
+                updateBatch($(this));
+            })
+            $(".price-inp").keyup(function () {
+                updatePrice($(this));
+            })
+            $(".pack-inp").keyup(function () {
+                updatePrice($(this));
+            })
+            $(".date-inp").change(function () {
+                if (Date.parse($(this).val()))
+                    $(this).css({"background-color": "white"});
+            })
+            $(".med-submit").click(function () {
+                submitData($(this));
+            })
+            $(".med-close").click(function () {
+                hideMedicine($(this).parent().parent().parent());
+            })
 
-         var tempmed = $(".medicine-container").clone(true, true);
-         var tempbat = $(".batch-inp").clone(true, true).hide();
-         $(".medicine-container").css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
+            var tempmed = $(".medicine-container").clone(true, true);
+            var tempbat = $(".batch-inp").clone(true, true).hide();
+            $(".medicine-container").css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
 
-         function updateMedicine(current) {
-            let counter = 0;
-            let closer = null;
-            $(".medicine-inp").each(function () {
-               if($(this).val() == '') {
-                  let batches = $(this).parent().find(".batch-inp");
-                  let flag = true;
-                  batches.each(function() {
-                     if($(this).val() != '') {
-                        $(this).parent().parent().find(".med-close").show('fast');
-                        flag = false;
-                     }
-                  });
-                  if(flag) {
-                     counter += 1;
-                     closer = $(this);
-                  }
-               }
-               else {
-                  $(".medicine-inp").css({"background-color": "white"});
-                  $(this).parent().parent().find(".med-close").hide('fast');
-               }
+            function updateMedicine(current) {
+                let counter = 0;
+                let closer = null;
+                $(".medicine-inp").each(function () {
+                    if ($(this).val() == '') {
+                        let batches = $(this).parent().find(".batch-inp");
+                        let flag = true;
+                        batches.each(function () {
+                            if ($(this).val() != '') {
+                                $(this).parent().parent().find(".med-close").show('fast');
+                                flag = false;
+                            }
+                        });
+                        if (flag) {
+                            counter += 1;
+                            closer = $(this);
+                        }
+                    } else {
+                        $(".medicine-inp").css({"background-color": "white"});
+                        $(this).parent().parent().find(".med-close").hide('fast');
+                    }
+                });
+
+                if (counter == 0) {
+                    let temp = tempmed.clone(true, true);
+                    $("#main-container").append(temp);
+                    setTimeout(function () {
+                        temp.css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
+                    }, 20);
+
+                } else if (counter == 2) {
+                    hideMedicine(closer.parent().parent());
+                    return false;
+                }
+            }
+
+            function hideMedicine(current) {
+                current.css({"transform": "matrix(0.001, 0, 0, 1, 0, 0)"});
+                setTimeout(function () {
+                    current.remove();
+                }, 210);
+            }
+
+            function updateBatch(current) {
+                let counter = 0;
+                current.parent().find(".batch-inp").each(function () {
+                    if ($(this).val() == '')
+                        counter += 1;
+                    else
+                        current.parent().find(".batch-inp").css({"background-color": "white"});
+                });
+
+
+                if (counter == 0) {
+                    let temp = tempbat.clone(true, true);
+                    current.parent().append(temp);
+                    temp.show('fast');
+                } else if (counter == 2) {
+                    current.parent().find(".batch-inp").each(function () {
+                        if ($(this).val() == '') {
+                            hideBatch($(this));
+                            return false;
+                        }
+                    });
+                }
+                /*
+                setTimeout(function() {
+                   console.log(current.parent().parent().find(".medicine-inp").val(), current.parent().find(".batch-inp").length);
+                   if(current.parent().parent().find(".medicine-inp").val() == undefined && current.parent().find(".batch-inp").length == 0) {
+                      hideBatch(current.parent().parent().parent());
+                   }
+                }, 220);
+                */
+            }
+
+            function hideBatch(current) {
+                current.hide('fast');
+                setTimeout(function () {
+                    current.remove();
+                }, 200);
+            }
+
+            function updatePrice(current) {
+                if (current.val() != '')
+                    current.css({"background-color": "white"});
+            }
+
+            function submitData(current) {
+                current.focusout();
+                update = true;
+                let card = current.parent().parent().parent();
+                if (card.find(".medicine-inp").val() == '') {
+                    update = false;
+                    card.find(".medicine-inp").css({"background-color": "#ffdddd"});
+                }
+                if (card.find(".price-inp").val() == '') {
+                    update = false;
+                    card.find(".price-inp").css({"background-color": "#ffdddd"});
+                }
+                if (card.find(".pack-inp").val() == '') {
+                    update = false;
+                    card.find(".pack-inp").css({"background-color": "#ffdddd"});
+                }
+                if (card.find(".date-inp").val() == '') {
+                    update = false;
+                    card.find(".date-inp").css({"background-color": "#ffdddd"});
+                }
+                let batches = card.find(".batch-inp");
+                if (batches.length == 1) {
+                    update = false;
+                    batches.css({"background-color": "#ffdddd"});
+                }
+
+                if (update) {
+                    batches.each(function () {
+                        if ($(this).val() == '') {
+                            hideBatch($(this));
+                            return false;
+                        }
+                    });
+                    setTimeout(function () {
+                        card.find(".done").show();
+                    }, 100);
+
+                    // Update data
+                    tname = card.find(".medicine-inp").val();
+                    price = card.find(".price-inp").val();
+                    pack = card.find("pack-inp").val();
+                    edate = card.find("date-inp").val();
+                    tbatches = new Array();
+                    batches.each(function () {
+                        tbatches.push($(this).val());
+                    });
+                    tbatches.pop();
+                    {#console.log(tname, price, pack, edate, tbatches);#}
+                }
+            }
+
+            let prev = null;
+            $(document).on("click", function () {
+                if (prev != null)
+                    prev.css({"border-color": "white"});
+                prev = $(event.target).parents(".medicine-container");
+                prev.css({"border-color": "var(--primary-color)"});
             });
 
-            if(counter == 0) {
-               let temp = tempmed.clone(true, true);
-               $("#main-container").append(temp);
-               setTimeout(function () {
-                  temp.css({"transform": "matrix(1, 0, 0, 1, 0, 0)"});
-               }, 20);
+            let batch_number_pointer = 0;
+            $(document).on('submit', '#user_form', function (e) {
+                e.preventDefault();
+                let inputs = $(".batch_number");
+                console.log("inputs length: "+inputs.length);
+                let batch_numbers = [];
+                console.log("batch number pointer: "+batch_number_pointer);
+                let loop_counter = 0;
+                for(let i = batch_number_pointer; i < (inputs.length-2); i++){
+                    batch_number = $(inputs[i]).val();
+                    console.log("batch number: "+batch_number);
+                    batch_numbers.push(batch_number);
+                    loop_counter += 1
+                }
+                $.ajax({
+                    type:'POST',
+                    url:'',
+                    data: {
+                        'csrfmiddlewaretoken': '{{ csrf_token }}',
+                        'product_name':$("#product_name").val(),
+                        'mrp':$("#mrp").val(),
+                        'packing':$("#packing").val(),
+                        'expiry':$("#expiry").val(),
+                        'batch_number[]':batch_numbers,
+                    },
+                    success: function () {
+                        batch_number_pointer += loop_counter;
+                    }
+                });
+            })
+        });
 
-            } else if (counter == 2) {
-               hideMedicine(closer.parent().parent());
-               return false;
-            }
-         }
-         function hideMedicine(current) {
-            current.css({"transform": "matrix(0.001, 0, 0, 1, 0, 0)"});
-            setTimeout( function() {
-               current.remove();
-            }, 210);
-         }
-
-         function updateBatch(current) {
-            let counter = 0;
-            current.parent().find(".batch-inp").each(function () {
-               if($(this).val() == '')
-                  counter += 1;
-               else
-                  current.parent().find(".batch-inp").css({"background-color": "white"});
-            });
-
-
-            if(counter == 0) {
-               let temp = tempbat.clone(true, true);
-               current.parent().append(temp);
-               temp.show('fast');
-            } else if (counter == 2) {
-               current.parent().find(".batch-inp").each(function () {
-                  if($(this).val() == '') {
-                     hideBatch($(this));
-                     return false;
-                  }
-               });
-            }
-            /*
-            setTimeout(function() {
-               console.log(current.parent().parent().find(".medicine-inp").val(), current.parent().find(".batch-inp").length);
-               if(current.parent().parent().find(".medicine-inp").val() == undefined && current.parent().find(".batch-inp").length == 0) {
-                  hideBatch(current.parent().parent().parent());
-               }
-            }, 220);
-            */
-         }
-
-         function hideBatch(current) {
-            current.hide('fast');
-            setTimeout( function() {
-               current.remove();
-            }, 200);
-         }
-
-         function updatePrice(current) {
-            if(current.val() != '')
-               current.css({"background-color": "white"});
-         }
-
-         function submitData(current) {
-            current.focusout();
-            update = true;
-            let card = current.parent().parent().parent();
-            if(card.find(".medicine-inp").val() == '') {
-               update = false;
-               card.find(".medicine-inp").css({"background-color": "#ffdddd"});
-            }
-            if(card.find(".price-inp").val() == '') {
-               update = false;
-               card.find(".price-inp").css({"background-color": "#ffdddd"});
-            }
-            if(card.find(".pack-inp").val() == '') {
-               update = false;
-               card.find(".pack-inp").css({"background-color": "#ffdddd"});
-            }
-            if(card.find(".date-inp").val() == '') {
-               update = false;
-               card.find(".date-inp").css({"background-color": "#ffdddd"});
-            }
-            let batches = card.find(".batch-inp");
-            if(batches.length == 1) {
-               update = false;
-               batches.css({"background-color": "#ffdddd"});
-            }
-
-            if (update) {
-               batches.each(function () {
-                  if($(this).val() == '') {
-                     hideBatch($(this));
-                     return false;
-                  }
-               });
-               setTimeout( function() {
-                  card.find(".done").show();
-               }, 100);
-
-               // Update data
-               tname = card.find(".medicine-inp").val();
-               price = card.find(".price-inp").val();
-               pack = card.find("pack-inp").val();
-               edate = card.find("date-inp").val();
-               tbatches = new Array();
-               batches.each(function() {
-                  tbatches.push($(this).val());
-               });
-               tbatches.pop();
-               console.log(tname, price, pack, edate, tbatches);
-            }
-         }
-
-         let prev = null;
-         $(document).on("click", function() {
-            if (prev != null)
-               prev.css({"border-color": "white"});
-            prev = $(event.target).parents(".medicine-container");
-            prev.css({"border-color": "var(--primary-color)"});
-         });
-      });
-
-   </script>
- {% endblock %}
+    </script>
+{% endblock %}

@@ -22,22 +22,22 @@
     <link rel="stylesheet" href="{% static 'lifecare/css/bootstrap.min.css' %}">
     <!-- Site CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lifecare/style.css'%} ">
+    <link rel="stylesheet" href="{% static 'lifecare/style.css' %} ">
     <!-- Colors CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lifecare/css/colors.css'%}">
+    <link rel="stylesheet" href="{% static 'lifecare/css/colors.css' %}">
     <!-- ALL VERSION CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lifecare/css/versions.css'%}">
+    <link rel="stylesheet" href="{% static 'lifecare/css/versions.css' %}">
     <!-- Responsive CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lifecare/css/responsive.css'%}">
+    <link rel="stylesheet" href="{% static 'lifecare/css/responsive.css' %}">
     <!-- Custom CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lifecare/css/custom.css'%}">
+    <link rel="stylesheet" href="{% static 'lifecare/css/custom.css' %}">
     <!-- Modernizer for Portfolio -->
     {% load static %}
-    <script src="{% static 'lifecare/js/modernizer.js'%}"></script>
+    <script src="{% static 'lifecare/js/modernizer.js' %}"></script>
 
     {% block head %}{% endblock %}
 </head>
@@ -77,9 +77,25 @@
                         </ul>
 
                         {% block navbar %}
-                        <ul class="nav navbar-nav" style="float: right">
-                            <li><a class="active" href="{% url 'login' %}">Login</a></li>
-                        </ul>
+                            <ul class="nav navbar-nav" style="float: right">
+                                {% if not user.is_authenticated %}
+                                    <li><a class="active" href="{% url 'login' %}">Login</a></li>
+                                {% endif %}
+                                {% if user.is_authenticated %}
+                                    {#            <li><a class=welcome>Welcome {{ user.username|title }}</a></li>#}
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Options
+                                            <div class="caret1"></div>
+                                        </a>
+                                        {% csrf_token %}
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'upload-excel' %}">Upload Excel</a>
+                                            <a class="dropdown-item" href="{% url 'upload-form' %}">Upload Form</a>
+                                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            </ul>
                         {% endblock %}
                     </div>
                 </nav>
@@ -97,5 +113,8 @@
 <!-- all plugins -->
 {% load static %}
 <script src="{% static 'lifecare/js/custom.js' %}"></script>
+<script>
+    window.csrf_token="{{ csrf_token }}"
+</script>
 </body>
 </html>

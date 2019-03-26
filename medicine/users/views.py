@@ -15,18 +15,14 @@ def user_login(request):
                             password=password)
         if user:
             login(request, user)
-            return HttpResponseRedirect(reverse('success'))
+            return HttpResponseRedirect(reverse('index'))
         else:
             context["error"] = "User Does Not Exist"
             return render(request, "users/login.html", context=context)
     else:
+        if request.user.is_authenticated:
+            return render(request, "lifecare/index.html")
         return render(request, "users/login.html", context=context)
-
-
-@login_required()
-def user_success(request):
-    context = {"user": request.user}
-    return render(request, "lifecare/index.html", context=context)
 
 
 @login_required()

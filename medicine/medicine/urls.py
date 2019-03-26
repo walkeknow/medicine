@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth import views as auth_views
-from users.views import  user_login, user_logout, user_success
+from users.views import  user_login, user_logout
 
 urlpatterns = [
     path('', include('authenticator.urls')),
@@ -13,6 +13,5 @@ urlpatterns = [
     #     template_name='users/login.html'
     # ), name="logout"),
     path('login/', user_login, name="login"),
-    path('success/', user_success, name="success"),
     path('logout/', user_logout, name="logout")
 ]
