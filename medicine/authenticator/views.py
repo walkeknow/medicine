@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, HttpResponse, Http404
 from django.template.defaulttags import register
 from django.contrib.auth.decorators import login_required
 from .models import Product, BatchNumber, Login
@@ -10,7 +10,45 @@ def index(request):
 
 
 def results(request):
-    return render(request, 'lifecare/result.html')
+    if request.method == "POST":
+        batch_number = request.POST['batch_number']
+
+        # returns list of objects
+        batch_number_query = BatchNumber.objects.filter(batch_no=batch_number)
+
+        # returns list of dicts
+        print(batch_number_query.values())
+
+        product_container_list = []
+        product_map = {}
+        for dict in batch_number_query.values():
+            product_container = {
+                "batch_number": batch_number
+            }
+            product_name_query = Product.objects.filter(id=dict["product_id"])
+            print(product_name_query[0].price)
+            product_container["product_name"] = product_name_query[0].product_name
+            product_container["mrp"] = product_name_query[0].price
+            product_container_list.append(product_container)
+
+        # returns list of tuples
+        company_tuple_list = Login.objects.values_list('manufacturer_name')
+        company_list = []
+        for i in company_tuple_list:
+            company_list.append(i[0])
+
+        print(batch_number_query)
+        print(company_list)
+        print(product_map)
+        context = {
+            "batch_number": batch_number,
+            "product_list": product_container_list,
+            "company_list": company_list,
+        }
+
+        return render(request, 'lifecare/result.html', context)
+    else:
+        return Http404
 
 
 @login_required()
@@ -31,6 +69,8 @@ def upload_form(request):
             l = list(user_query_set.values('manufacturer_name'))
             manf_name = l[0]['manufacturer_name']
             product.manufacturer = manf_name
+
+        # if product_query_set:
 
         product.product_name = product_name
         product.price = str(mrp)
