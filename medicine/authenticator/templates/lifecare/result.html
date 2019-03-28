@@ -2,140 +2,146 @@
 
 {% block content %}
 
-<div class="services" style="position: absolute; height: inherit; padding-bottom: 0;">
-         <div class="container result-container">
+    <div class="services" style="position: absolute; height: inherit; padding-bottom: 0;">
+        <div class="container result-container">
             <div class="heading heading-white" style="margin-top: 80px;">
-               <h2 style="color: white;">Results</h2>
+                <h2 style="color: white;">Results</h2>
             </div>
             <div class="row">
-               <div class="col-md-6 col-xs-12">
-                  <div class="pane">
-                     <div class="row text-center"><h3>You searched for: #batchno</h3></div>
-                     <hr class="hr">
-                     <div id="results" class="row text-center"></div>
-                     
-                     <div id="product_container">
-                        <div class="row product">
-                           <div class="col-xs-12">
-                              <div class="row">Product name:</div>
-                              <div class="row">MRP:</div>
-                              <div class="row">Batch No:</div>
-                           </div>
-                        </div>
-
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-md-6 col-xs-12">
-                  <div class="pane">
-                     <div class="row">
-                        <h4 class="text-center" style="margin-bottom: 5px">
-                           No results found?<br>
-                           Or you cannot see your product here?<br><br>
-                           Check if the company is affilitiated with us!
-                        </h4>
-                     </div>
-                     <div id="result_company" class="row text-center"></div>
-                     <div class="row">
-                        <div class="form-group">
-                           <input placeholder="Enter company name" id="company_name" list="companies" oninput="change()">
-                           <datalist id="companies"></datalist> 
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="pane" style="min-height: 230px;">
-                     <h3 class="text-center">Verify another product</h3>
-                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 1em">
+                <div class="col-md-6 col-xs-12">
+                    <div class="pane">
+                        <div class="row text-center"><h3>You searched for: {{ batch_number }}</h3></div>
+                        <hr class="hr">
+                        <div id="results" class="row text-center"></div>
+                        {% for product in product_list %}
+                            <div id="product_container">
+                                <div class="row product">
+                                    <div class="col-xs-12">
+                                        <div class="row">Product name: {{ product.product_name }}</div>
+                                        <div class="row">MRP: {{ product.mrp }}</div>
+                                        <div class="row">Batch No: {{ product.batch_number }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="pane">
                         <div class="row">
-                           <div class="form-group">
-                              <input type="text" id="batch" placeholder="Batch number">
-                           </div>
+                            <h4 class="text-center" style="margin-bottom: 5px">
+                                No results found?<br>
+                                Or you cannot see your product here?<br><br>
+                                Check if the company is affilitiated with us!
+                            </h4>
                         </div>
-                     </div>
-                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div id="result_company" class="row text-center"></div>
                         <div class="row">
-                           <div class="form-group">
-                              <div class="center"><button class="btn btn-light btn-radius btn-brd grd1 effect-1">Submit</button></div>
-                           </div>
+                            <div class="form-group">
+                                <input placeholder="Enter company name" id="company_name" list="companies"
+                                       oninput="change()">
+                                <datalist id="companies"></datalist>
+                            </div>
                         </div>
-                     </div>                     
-                  </div>
-               </div>
+                    </div>
+
+                    <div class="pane" style="min-height: 230px;">
+                        <h3 class="text-center">Verify another product</h3>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 1em">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input type="text" id="batch" placeholder="Batch number" name="batch_number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="center">
+                                            <button type="submit"
+                                                    class="btn btn-light btn-radius btn-brd grd1 effect-1">Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-         </div>
-
-         <div class="row" style="margin-top: 80px;">
+        </div>
+        <div class="row" style="margin-top: 80px;">
             <div class="copyright-area wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-8">
-                        <div class="footer-text">
-                           <p>© 2018. Distributed by <a id="tw" href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="footer-text">
+                                <p>© 2018. Distributed by <a id="tw" href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                                </p>
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="social">
-                           <ul class="social-links">
-                              <li><a href=""><i class="fa fa-rss"></i></a></li>
-                              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                              <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                              <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                              <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                              <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                           </ul>
+                        <div class="col-md-4">
+                            <div class="social">
+                                <ul class="social-links">
+                                    <li><a href=""><i class="fa fa-rss"></i></a></li>
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        </div>
+    </div>
 
-      <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-         document.getElementById("results").innerHTML = "2 products found";
+    <script>
 
-         let company = ["a", "b", "s", ""];
+        document.getElementById("results").innerHTML = "{{product_list|length}} " + "products found";
 
-         populate("companies", company);
+        let company = {{ company_list|safe }};
+        console.log("{{ company_list|safe }}");
+        populate("companies", company);
 
-         function populate(identify, listi) {
+        function populate(identify, listi) {
             let options = '';
             for (let i = 0; i < listi.length; i++) {
-               options += '<option value="' + listi[i] + '" />';
+                options += '<option value="' + listi[i] + '" />';
             }
             document.getElementById(identify).innerHTML = options;
-         }
+        }
 
-         function change() {
+        function change() {
             if (document.getElementById("company_name").value != "") {
-               let flag = true;
-               company.some( function(ele) {
-                  if (document.getElementById("company_name").value == ele) {
-                     comp("Company affilitiated", "#00ff33");
-                     flag = false;
-                     return true;
-                  }
-               });
-               if(flag) {
-                  comp("Company not affilitiated", "red");
-               }
+                let flag = true;
+                company.some(function (ele) {
+                    if (document.getElementById("company_name").value == ele) {
+                        comp("Company affilitiated", "#00ff33");
+                        flag = false;
+                        return true;
+                    }
+                });
+                if (flag) {
+                    comp("Company not affilitiated", "red");
+                }
             } else {
-               comp("", "white");
+                comp("", "white");
             }
-            
-            
-         }
 
-         function comp(text, color) {
+
+        }
+
+        function comp(text, color) {
             document.getElementById("result_company").innerHTML = text;
             document.getElementById("result_company").style.borderColor = color;
             document.getElementById("result_company").style.color = color;
-         }
-      </script>
-
+        }
+    </script>
 {% endblock %}
