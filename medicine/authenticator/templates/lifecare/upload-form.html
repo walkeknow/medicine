@@ -291,9 +291,9 @@
             }
 
             function hideMedicine(current) {
-                current.css({"transform": "matrix(0.001, 0, 0, 1, 0, 0)"});
+                current.parent().css({"transform": "matrix(0.001, 0, 0, 1, 0, 0)"});
                 setTimeout(function () {
-                    current.remove();
+                    current.parent().remove();
                 }, 210);
             }
 

@@ -261,14 +261,13 @@ body.clinic_version .footer-social {
 body.clinic_version .desc {
     position: relative;
     background: #fff;
-    border: 1px solid #ededed;
+    border: 1px solid #ccc;
 }
 
 body.clinic_version .desc:after,
 body.clinic_version .desc:before {
     top: 100%;
     left: 10%;
-    border: solid transparent;
     content: " ";
     height: 0;
     width: 0;
@@ -277,8 +276,6 @@ body.clinic_version .desc:before {
 }
 
 body.clinic_version .desc:after {
-    border-color: rgba(136, 183, 213, 0);
-    border-top-color: #fff;
     border-width: 15px;
     margin-left: -15px;
 }

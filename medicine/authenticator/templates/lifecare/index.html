@@ -5,6 +5,21 @@
         .welcome {
             pointer-events: none;
         }
+        body.clinic_version .desc {
+            border: 1px solid #ccc;
+        }
+        body.clinic_version .desc:after,
+        body.clinic_version .desc:before {
+            content: none;
+        }
+        @media (max-width:1000px) {
+            body.clinic_version .desc {
+                margin-bottom: 25px;
+            }
+            .invis {
+                display: none;
+            }
+        }
     </style>
 {% endblock %}
 
@@ -67,14 +82,14 @@
     <div id="about" class="section wow fadeIn">
         <div class="container">
             <div class="heading">
-                <h2>The Specialist Clinic</h2>
+                <h2>About Us</h2>
             </div>
             <!-- end title -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">
                         <h4>What We Do</h4>
-                        <h2>Clinic Service</h2>
+                        <h2>Verify products</h2>
                         <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim,
                             non
                             aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
@@ -92,9 +107,6 @@
                     <div class="post-media wow fadeIn">
                         {% load static %}
                         <img src="{% static 'lifecare/images/about_03.jpg' %}" alt="" class="img-responsive">
-                        <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]"
-                           class="playbutton"><i
-                                class="flaticon-play-button"></i></a>
                     </div>
                     <!-- end media -->
                 </div>
@@ -178,7 +190,7 @@
                            <span class="icon-service">
                               <a href="http://www.erhc.in/">
                                    {% load static %}
-                                  <img src="{% static 'lifecare/images/easyreach.jpg' %}" alt="#"/></a>
+                                  <img src="{% static 'lifecare/images/easyreach.jpg' %}" alt="#" class="img-rounded"/></a>
                            </span>
                                 <h4>ANYTIME BLOOD BANK</h4>
                                 <p>Lorem Ipsum is simply dummy text of the printing.</p>
@@ -198,10 +210,11 @@
         <div class="container">
 
             <div class="heading">
-                <h2>The Specialist Clinic</h2>
+                <h2>Our Team</h2>
             </div>
 
             <div class="row dev-list text-center">
+                <div class="col-md-2 col-xs-0"></div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s"
                      data-wow-delay="0.2s"
                      style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
@@ -247,27 +260,7 @@
                         </div>
                     </div><!--widget -->
                 </div><!-- end col -->
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
-                    <div class="widget clearfix">
-                        {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_03.jpg' %}" alt=""
-                             class="img-responsive img-rounded">
-                        <div class="widget-title">
-                            <h3>Matthew Bayliss</h3>
-                            <small>Orthopedics Expert</small>
-                        </div>
-                        <!-- end title -->
-                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                        <div class="footer-social">
-                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div><!--widget -->
-                </div><!-- end col -->
+                <div class="col-md-2 col-xs-0"></div>
 
             </div><!-- end row -->
         </div><!-- end container -->
@@ -284,20 +277,9 @@
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
+                            <h3><i class="fa fa-quote-left"></i> What is purpose of PAAV? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">The purpose is to allow the user to verify the authenticity of a product as per their three level of packaging namely Primary, Secondary and Tertiary given by the guidelines of Govt. of India.</p>
                         </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>James Fernando
-                                <small>- Manager of Racer</small>
-                            </h4>
-                        </div>
-                        <!-- end testi-meta -->
                     </div>
                     <!-- end testimonial -->
                 </div>
@@ -305,18 +287,8 @@
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_02.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Andrew Atkinson
-                                <small>- Life Manager</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> How does it work? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">User wishing to authenticate and verify the medicine batch should enter the batch number in the search bar and submit the request. The system will verify from the database and confirm the authentication of the batch of the medicine that you are looking for.</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
@@ -330,39 +302,20 @@
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_03.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Amanda DOE
-                                <small>- Manager of Racer</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> Is the data in the website genuine? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">Disclaimer - 'The data found / not found in our database does not mean that the batch is not a genuine'.</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
                     <!-- end testimonial -->
                 </div>
                 <!-- end col -->
+
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Martin Johnson
-                                <small>- Founder of Goosilo</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> Can a customer verfy his drug with mobile or laptop? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">Yes, provided the data upto primary level has been uploaded by the manufacturer on the Central portal</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
