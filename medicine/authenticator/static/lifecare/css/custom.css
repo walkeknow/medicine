@@ -883,7 +883,7 @@ body.clinic_version .footer .widget-title h3 {
     background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
 }
 #testimonials {
-    background-image: url('../images/bg-testimonial.png');
+    background-image: url('../images/service-bg.png');
     background-position: bottom;
     background-attachment: fixed;
 }

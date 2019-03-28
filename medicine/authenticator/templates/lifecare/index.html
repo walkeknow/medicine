@@ -5,6 +5,28 @@
         .welcome {
             pointer-events: none;
         }
+        body.clinic_version .desc {
+            border: 1px solid #ccc;
+        }
+        body.clinic_version .desc:after,
+        body.clinic_version .desc:before {
+            content: none;
+        }
+        .col-xs-12 {
+            padding: 0;
+        }
+        @media (max-width:1000px) {
+            body.clinic_version .desc {
+                margin-bottom: 25px;
+            }
+            .invis {
+                display: none;
+            }
+        }
+    #home {
+        {% load static %}
+        background-image: url({% static 'lifecare/images/bg-slider.png' %});
+    }
     </style>
 {% endblock %}
 
@@ -67,22 +89,17 @@
     <div id="about" class="section wow fadeIn">
         <div class="container">
             <div class="heading">
-                <h2>The Specialist Clinic</h2>
+                <h2>About Us</h2>
             </div>
             <!-- end title -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">
                         <h4>What We Do</h4>
-                        <h2>Clinic Service</h2>
-                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim,
-                            non
-                            aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus
-                            bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis
-                            dis
-                            parturient montes, nascetur ridiculus mus. </p>
-                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn
+                        <h2>Verify products</h2>
+                        <p class="lead">EasyReach Healthcare Private Limited has developed - Product Authentication and Verification.</p>
+                        <p> The reason this feature has been developed is to allow users to know more about the products that consumers consume. Here the consumer gets to verify the authenticity of the product that they are about to use. It will help to ensure that consumers are using authentic products. </p>
+                        <a href="#testimonials" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn
                             More</a>
                     </div>
                     <!-- end messagebox -->
@@ -92,9 +109,6 @@
                     <div class="post-media wow fadeIn">
                         {% load static %}
                         <img src="{% static 'lifecare/images/about_03.jpg' %}" alt="" class="img-responsive">
-                        <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]"
-                           class="playbutton"><i
-                                class="flaticon-play-button"></i></a>
                     </div>
                     <!-- end media -->
                 </div>
@@ -121,8 +135,6 @@
                                  <img src="{% static 'lifecare/images/clinic-manager.jpg' %}" alt="#"
                                       class="img-rounded"/> </a></span>
 
-                                <h4>PREMIUM FACILITIES</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -133,8 +145,7 @@
                                  <img src="{% static 'lifecare/images/calculator.jpg' %}" alt="#"
                                       class="img-rounded"/> </a></span>
 
-                                <h4>LARGE LABORATORY</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -145,8 +156,7 @@
                                  <img src="{% static 'lifecare/images/digihealth-locker.jpg' %}" alt="#"
                                       class="img-rounded"/> </a></span>
 
-                                <h4>DETAILED SPECIALIST</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -157,8 +167,8 @@
                                  <img src="{% static 'lifecare/images/vaxins.jpg' %}" alt="#" class="img-rounded"/>
                                 </a>
                                </span>
-                                <h4>CHILDREN CARE CENTER</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -169,8 +179,8 @@
                                   <img src="{% static 'lifecare/images/erx.jpg' %}" alt="#" class="img-rounded"/>
                                 </a>
                                </span>
-                                <h4>FINE INFRASTRUCTURE</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -178,10 +188,10 @@
                            <span class="icon-service">
                               <a href="http://www.erhc.in/">
                                    {% load static %}
-                                  <img src="{% static 'lifecare/images/easyreach.jpg' %}" alt="#"/></a>
+                                  <img src="{% static 'lifecare/images/easyreach.jpg' %}" alt="#" class="img-rounded"/></a>
                            </span>
-                                <h4>ANYTIME BLOOD BANK</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing.</p>
+
+
                             </div>
                         </div>
                     </div>
@@ -198,29 +208,30 @@
         <div class="container">
 
             <div class="heading">
-                <h2>The Specialist Clinic</h2>
+                <h2>Our Team</h2>
             </div>
 
             <div class="row dev-list text-center">
+                <div class="col-md-2 col-xs-0"></div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s"
                      data-wow-delay="0.2s"
                      style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
                     <div class="widget clearfix">
                         {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_01.jpg' %}" alt=""
+                        <img src="{% static 'lifecare/images/dp_kewal.jpg' %}" alt=""
                              class="img-responsive img-rounded">
                         <div class="widget-title">
-                            <h3>Soren Bo Bostian</h3>
-                            <small>Clinic Owner</small>
+                            <h3>Kewal Shah</h3>
+                            <small>Developer</small>
                         </div>
                         <!-- end title -->
-                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
+                        <p>Hello guys, I am Kewal. I worked mainly on the backend part of developing this amazing website.</p>
 
                         <div class="footer-social">
-                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/walkeknow" class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a href="https://github.com/walkeknow" class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a href="https://twitter.com/walkeknow" class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/kewal-shah/" class="btn grd1"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div><!--widget -->
                 </div><!-- end col -->
@@ -247,27 +258,7 @@
                         </div>
                     </div><!--widget -->
                 </div><!-- end col -->
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
-                    <div class="widget clearfix">
-                        {% load static %}
-                        <img src="{% static 'lifecare/images/doctor_03.jpg' %}" alt=""
-                             class="img-responsive img-rounded">
-                        <div class="widget-title">
-                            <h3>Matthew Bayliss</h3>
-                            <small>Orthopedics Expert</small>
-                        </div>
-                        <!-- end title -->
-                        <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                        <div class="footer-social">
-                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div><!--widget -->
-                </div><!-- end col -->
+                <div class="col-md-2 col-xs-0"></div>
 
             </div><!-- end row -->
         </div><!-- end container -->
@@ -276,28 +267,17 @@
 
     <div id="testimonials" class="section wb wow fadeIn" style="padding-top: 45px;">
         <div class="container">
-            <div class="heading">
-                <h2>FAQs</h2>
+            <div class="heading heading-white">
+                <h2 style="color: white;" >FAQs</h2>
             </div>
             <!-- end title -->
             <div class="row">
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
+                            <h3><i class="fa fa-quote-left"></i> What is purpose of PAAV? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">The purpose is to allow the user to verify the authenticity of a product as per their three level of packaging namely Primary, Secondary and Tertiary given by the guidelines of Govt. of India.</p>
                         </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>James Fernando
-                                <small>- Manager of Racer</small>
-                            </h4>
-                        </div>
-                        <!-- end testi-meta -->
                     </div>
                     <!-- end testimonial -->
                 </div>
@@ -305,18 +285,8 @@
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_02.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Andrew Atkinson
-                                <small>- Life Manager</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> How does it work? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">User wishing to authenticate and verify the medicine batch should enter the batch number in the search bar and submit the request. The system will verify from the database and confirm the authentication of the batch of the medicine that you are looking for.</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
@@ -330,39 +300,20 @@
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_03.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Amanda DOE
-                                <small>- Manager of Racer</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> Is the data in the website genuine? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">Disclaimer - 'The data found / not found in our database does not mean that the batch is not a genuine'.</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
                     <!-- end testimonial -->
                 </div>
                 <!-- end col -->
+
                 <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                     <div class="testimonial clearfix">
                         <div class="desc">
-                            <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                            <p class="lead">They have got my project on time with the competition with a sed highly
-                                skilled,
-                                and experienced & professional team.</p>
-                        </div>
-                        <div class="testi-meta">
-                            {% load static %}
-                            <img src="{% static 'lifecare/images/testi_01.png' %}" alt=""
-                                 class="img-responsive alignleft">
-                            <h4>Martin Johnson
-                                <small>- Founder of Goosilo</small>
-                            </h4>
+                            <h3><i class="fa fa-quote-left"></i> Can a customer verfy his drug with mobile or laptop? &nbsp&nbsp&nbsp<i class="fa fa-quote-right"></i></h3>
+                            <p class="lead">Yes, provided the data upto primary level has been uploaded by the manufacturer on the Central portal</p>
                         </div>
                         <!-- end testi-meta -->
                     </div>
@@ -479,8 +430,8 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="footer-text">
-                        <p>© 2018. Distributed by <a id="tw" href="https://themewagon.com/"
-                                                     target="_blank">ThemeWagon</a>
+                        <p><a id="tw" href="https://themewagon.com/"
+                                                     target="_blank"></a>
                         </p>
                     </div>
                 </div>
