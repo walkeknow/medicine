@@ -50,12 +50,12 @@
 <!-- END LOADER -->
 <header>
     <div class="header-top fadeIn">
-{#        <div class="container">#}
-{#            {% load static %}#}
-{#            <a class="navbar-brand" href="{% url 'index' %}">#}
-{#                {% load static %}#}
-{#                <img src="{% static 'lifecare/images/logo.png' %}" alt="image" style="margin-bottom: 0px;"></a>#}
-{#        </div>#}
+        <div class="container">
+            {% load static %}
+            <a class="navbar-brand" style="padding: 5px 15px" href="{% url 'index' %}">
+                {% load static %}
+                <img src="{% static 'lifecare/images/logo.png' %}" alt="image" style="margin-bottom: 0px;"></a>
+        </div>
         <div class="header-bottom fadeIn">
             <div class="container">
                 <nav class="main-menu">
