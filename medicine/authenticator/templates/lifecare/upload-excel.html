@@ -70,9 +70,17 @@
 
 {% block content %}
       <div class="container" id="main-container">
+          <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %} {{form}}
+              <input type="submit" value="Upload" />
+          </form>
          <div class="col-xs-12 col-md-4 col-lg-5">
             <div class="pane" id="excel-container">
-               <form class="excel-file text-center">
+{#                <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">#}
+{#                    {% csrf_token %} {{form}}#}
+{#                    <input type="submit" value="Upload" />#}
+{#                </form>#}
+               <form class="excel-file text-center" id="prim_form" method="post" enctype="multipart/form-data">
                   <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>
                   <hr class="hr">
                   <label class="btn btn-light upload">
@@ -83,7 +91,8 @@
                      <hr class="hr">
                      <div id="gallery"></div>
                      <hr class="hr">
-                     <button class="btn btn-light upload">Submit</button>
+                      {% csrf_token %}
+                      <button class="btn btn-light upload" onclick="send_post()">Submit</button>
                   </div>
                </form>
             </div>
@@ -175,7 +184,7 @@
 
          function handleFiles(files) {
            files = [...files];
-           
+
            for (let i = 0; i < files.length; i++) {
                let flag = true;
                for (let j = 0; j < filesDone; j++) {
@@ -193,19 +202,16 @@
          }
 
          function uploadFile(file) {
-           let url = 'YOUR URL HERE'
 
            formData.append('file' + filesDone, file);
            filesDone++;
-
-           fetch(url, {
-             method: 'POST',
-             body: formData
-           })
-           .then(() => {}) // <- Add `progressDone` call here
-           .catch(() => { /* Error. Inform the user */ })
          }
 
+         function send_post() {
+             var request = new XMLHttpRequest();
+             request.open("POST", "");
+             request.send(formData);
+         }
 
          function previewFile(file) {
             child = '<i class="fa fa-file-excel-o" style="font-size:28px; color: #39b49a">' + file.name + '</i>';
