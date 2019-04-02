@@ -6,6 +6,7 @@ import xlrd
 import os
 from datetime import datetime
 
+
 # Create your views here.
 def index(request):
     return render(request, 'lifecare/index.html')
@@ -88,58 +89,58 @@ def upload_form(request):
 
     return render(request, 'lifecare/upload-form.html')
 
-def floatHourToTime(fh):
-    h, r = divmod(fh, 1)
-    m, r = divmod(r*60, 1)
-    return (
-        int(h),
-        int(m),
-        int(r*60),
-    )
-
-@login_required()
-def upload_excel(request):
-    module_dir = os.path.dirname(__file__)
-    file_path = os.path.join(module_dir, 'data.xlsx')
-    loc = file_path
-    wb = xlrd.open_workbook(loc)
-    sheet = wb.sheet_by_index(0)
-    sheet.cell_value(0,0)
-
-    for i in range(1, sheet.nrows):
-        row = [str(x).strip() for x in sheet.row_values(i)]
-        product_name = row[0]
-        packing = row[1]
-        batch_numbers = row[2]
-        mrp = row[3]
-        expiry = row[4]
-        excel_date = float(expiry)
-        dt = datetime.fromordinal(datetime(1900, 1, 1).toordinal() + int(excel_date) - 2)
-        hour, minute, second = floatHourToTime(excel_date % 1)
-        expiry_with_time = dt.replace(hour=hour, minute=minute, second=second)
-        expiry = expiry_with_time.date()
-
-        product = Product()
-
-        user_query_set = Login.objects.filter(user=request.user)
-
-        if user_query_set:
-            l = list(user_query_set.values('manufacturer_name'))
-            manf_name = l[0]['manufacturer_name']
-            product.manufacturer = manf_name
-
-        # if product_query_set:
-
-        product.product_name = product_name
-        product.price = str(mrp)
-        product.packing = packing
-        product.expiry = expiry
-        product.save()
-
-        for i in range(len(batch_numbers)):
-            batch = BatchNumber()
-            batch.product = product
-            batch.batch_no = str(batch_numbers[i])
-            batch.save()
-
-    return render(request, 'lifecare/upload-excel.html')
+# def floatHourToTime(fh):
+#     h, r = divmod(fh, 1)
+#     m, r = divmod(r*60, 1)
+#     return (
+#         int(h),
+#         int(m),
+#         int(r*60),
+#     )
+#
+# @login_required()
+# def upload_excel(request):
+#     module_dir = os.path.dirname(__file__)
+#     file_path = os.path.join(module_dir, 'data.xlsx')
+#     loc = file_path
+#     wb = xlrd.open_workbook(loc)
+#     sheet = wb.sheet_by_index(0)
+#     sheet.cell_value(0,0)
+#
+#     for i in range(1, sheet.nrows):
+#         row = [str(x).strip() for x in sheet.row_values(i)]
+#         product_name = row[0]
+#         packing = row[1]
+#         batch_numbers = row[2]
+#         mrp = row[3]
+#         expiry = row[4]
+#         excel_date = float(expiry)
+#         dt = datetime.fromordinal(datetime(1900, 1, 1).toordinal() + int(excel_date) - 2)
+#         hour, minute, second = floatHourToTime(excel_date % 1)
+#         expiry_with_time = dt.replace(hour=hour, minute=minute, second=second)
+#         expiry = expiry_with_time.date()
+#
+#         product = Product()
+#
+#         user_query_set = Login.objects.filter(user=request.user)
+#
+#         if user_query_set:
+#             l = list(user_query_set.values('manufacturer_name'))
+#             manf_name = l[0]['manufacturer_name']
+#             product.manufacturer = manf_name
+#
+#         # if product_query_set:
+#
+#         product.product_name = product_name
+#         product.price = str(mrp)
+#         product.packing = packing
+#         product.expiry = expiry
+#         product.save()
+#
+#         for i in range(len(batch_numbers)):
+#             batch = BatchNumber()
+#             batch.product = product
+#             batch.batch_no = str(batch_numbers[i])
+#             batch.save()
+#
+#     return render(request, 'lifecare/upload-excel.html')
