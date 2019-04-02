@@ -125,3 +125,7 @@ MEDIA_URL = '/media/'
 django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL = 'index'
+
+FILE_UPLOAD_HANDLERS = (
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+)

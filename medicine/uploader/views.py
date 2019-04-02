@@ -35,17 +35,18 @@ def floatHourToTime(fh):
 @login_required()
 def upload_excel(request):
     if request.method == "POST":
-        print("enter")
-        file = UploadForm(request.POST)
-        print(request.POST)
-        files = request.POST['formData']
-        print(files)
+        file = UploadForm(request.POST, request.FILES)
         if file.is_valid():
-            file.save()
-            module_dir = os.path.dirname(__file__)
-            file_path = os.path.join(module_dir, 'data.xlsx')
-            loc = file_path
-            wb = xlrd.open_workbook(loc)
+            input_excel = request.FILES['file']
+            print(input_excel)
+            # file.save()
+            # saved_file_query = Upload.objects.all().order_by('-id')[0]
+            # print(saved_file_query.file)
+            # saved_file = saved_file_query.file
+            # module_dir = os.path.dirname(__file__)
+            # file_path = os.path.join(module_dir, input_excel)
+            # loc = file_path
+            wb = xlrd.open_workbook(file_contents=input_excel.read())
             sheet = wb.sheet_by_index(0)
             sheet.cell_value(0, 0)
 
@@ -53,7 +54,7 @@ def upload_excel(request):
                 row = [str(x).strip() for x in sheet.row_values(i)]
                 product_name = row[0]
                 packing = row[1]
-                batch_numbers = row[2]
+                batch_number = row[2]
                 mrp = row[3]
                 expiry = row[4]
                 excel_date = float(expiry)
@@ -79,11 +80,10 @@ def upload_excel(request):
                 product.expiry = expiry
                 product.save()
 
-                for i in range(len(batch_numbers)):
-                    batch = BatchNumber()
-                    batch.product = product
-                    batch.batch_no = str(batch_numbers[i])
-                    batch.save()
+                batch = BatchNumber()
+                batch.product = product
+                batch.batch_no = batch_number
+                batch.save()
             return HttpResponseRedirect(reverse('upload-excel'))
         print("invalid file")
     else:

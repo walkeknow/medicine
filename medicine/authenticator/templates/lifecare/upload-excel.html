@@ -70,31 +70,31 @@
 
 {% block content %}
       <div class="container" id="main-container">
-          <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
-              {% csrf_token %} {{form}}
-              <input type="submit" value="Upload" />
-          </form>
+{#          <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">#}
+{#              {% csrf_token %} {{form}}#}
+{#              <input type="submit" value="Upload" />#}
+{#          </form>#}
          <div class="col-xs-12 col-md-4 col-lg-5">
             <div class="pane" id="excel-container">
-{#                <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">#}
-{#                    {% csrf_token %} {{form}}#}
-{#                    <input type="submit" value="Upload" />#}
-{#                </form>#}
-               <form class="excel-file text-center" id="prim_form" method="post" enctype="multipart/form-data">
-                  <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>
-                  <hr class="hr">
-                  <label class="btn btn-light upload">
-                     <input type="file" id="file-btn" style="display: none;" multiple="multiple" accept= application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel >
-                     Choose file
-                  </label>
-                  <div id="prog">
-                     <hr class="hr">
-                     <div id="gallery"></div>
-                     <hr class="hr">
-                      {% csrf_token %}
-                      <button class="btn btn-light upload" onclick="send_post()">Submit</button>
-                  </div>
-               </form>
+                <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} {{form}}
+                    <input type="submit" value="Upload" />
+                </form>
+{#               <form class="excel-file text-center" id="prim_form" method="post" enctype="multipart/form-data">#}
+{#                  <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>#}
+{#                  <hr class="hr">#}
+{#                  <label class="btn btn-light upload">#}
+{#                     <input type="file" id="file-btn" style="display: none;" multiple="multiple" accept= application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel >#}
+{#                     Choose file#}
+{#                  </label>#}
+{#                  <div id="prog">#}
+{#                     <hr class="hr">#}
+{#                     <div id="gallery"></div>#}
+{#                     <hr class="hr">#}
+{#                      {% csrf_token %}#}
+{#                      <button class="btn btn-light upload" onclick="send_post()">Submit</button>#}
+{#                  </div>#}
+{#               </form>#}
             </div>
          </div>
 
