@@ -35,9 +35,9 @@ def floatHourToTime(fh):
 @login_required()
 def upload_excel(request):
     if request.method == "POST":
-        input_excel = request.POST.get('file0')
+        #input_excel = request.POST.get('file0')
         
-        #input_excel = request.FILES['file']
+        input_excel = request.FILES['file']
         print(input_excel)
         # file.save()
         # saved_file_query = Upload.objects.all().order_by('-id')[0]
