@@ -1352,6 +1352,7 @@ nav.main-menu .navbar-toggle {border: solid #fff 2px;}
 .footer-info h3, .subcriber-info h3 {float: left;width: 100%;}
 .footer-info p {float: left;width: 100%;}
 .text-contant {margin: -15px 10% 0;}
+.header-bottom nav.main-menu {padding-bottom: 15px}
 }
 
 
