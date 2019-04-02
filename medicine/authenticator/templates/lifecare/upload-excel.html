@@ -70,31 +70,32 @@
 
 {% block content %}
       <div class="container" id="main-container">
-{#          <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">#}
-{#              {% csrf_token %} {{form}}#}
-{#              <input type="submit" value="Upload" />#}
-{#          </form>#}
+          <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %} {{form}}
+              <input type="submit" value="Upload" />
+          </form>
          <div class="col-xs-12 col-md-4 col-lg-5">
             <div class="pane" id="excel-container">
                 <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %} {{form}}
                     <input type="submit" value="Upload" />
                 </form>
-{#               <form class="excel-file text-center" id="prim_form" method="post" enctype="multipart/form-data">#}
-{#                  <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>#}
-{#                  <hr class="hr">#}
-{#                  <label class="btn btn-light upload">#}
-{#                     <input type="file" id="file-btn" style="display: none;" multiple="multiple" accept= application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel >#}
-{#                     Choose file#}
-{#                  </label>#}
-{#                  <div id="prog">#}
-{#                     <hr class="hr">#}
-{#                     <div id="gallery"></div>#}
-{#                     <hr class="hr">#}
-{#                      {% csrf_token %}#}
-{#                      <button class="btn btn-light upload" onclick="send_post()">Submit</button>#}
-{#                  </div>#}
-{#               </form>#}
+               <form class="excel-file text-center" id="prim_form" method="post" enctype="multipart/form-data">
+                  {% csrf_token %} {{form}}
+                  <h1 style="margin-top: 10px; padding-bottom: 0px;">DRAG AND DROP TO UPLOAD</h1>
+                  <hr class="hr">
+                  <label class="btn btn-light upload">
+                     <input type="file" id="file-btn" style="display: none;" multiple="multiple" accept= application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel >
+                     Choose file
+                  </label>
+                  <div id="prog">
+                     <hr class="hr">
+                     <div id="gallery"></div>
+                     <hr class="hr">
+                      {% csrf_token %} 
+                      <button class="btn btn-light upload" onclick="send_post()">Submit</button>
+                  </div>
+               </form>
             </div>
          </div>
 
@@ -133,7 +134,8 @@
       <script>
          let dropArea = document.getElementById('excel-container');
          let filesDone = 0;
-         let formData = new FormData()
+         let formData = new FormData();
+         formData.append('csrfmiddlewaretoken', "{{ csrf_token }}");
          let fileBtn = document.getElementById('file-btn');
 
          ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -205,17 +207,53 @@
 
            formData.append('file' + filesDone, file);
            filesDone++;
+           console.log(formData.get('file0'));
          }
 
+
          function send_post() {
+             /*
              var request = new XMLHttpRequest();
+             var sendCSRFtoken = "csrfmiddlewaretoken="+String(getCookie('csrftoken'));
+             var sendContent = sendCSRFtoken+"&"+formData;
+
              request.open("POST", "");
-             request.send(formData);
+             request.send(sendContent);
+             */
+
+             $.ajax({
+              url: '',
+              type: 'POST'
+              data: formData,
+              success:function(data){
+                console.log(data);
+              },
+              error:function(error){
+                console.log(error);
+              }
+            });
+
          }
 
          function previewFile(file) {
             child = '<i class="fa fa-file-excel-o" style="font-size:28px; color: #39b49a">' + file.name + '</i>';
             document.getElementById('gallery').innerHTML += child;
+         }
+
+         function getCookie(name) {
+             var cookieValue = null;
+             if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = cookies[i].trim();
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
          }
       </script>
 {% endblock %}
