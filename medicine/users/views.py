@@ -11,6 +11,12 @@ def user_login(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
+        remember_me = request.POST.get('remember_me', None)
+        print(remember_me)
+        if not remember_me:
+            print("remember me not checked")
+            request.session.set_expiry(0)
+
         user = authenticate(request, username=username,
                             password=password)
         if user:
