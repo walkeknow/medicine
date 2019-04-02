@@ -32,6 +32,8 @@ def results(request):
             print(product_name_query[0].price)
             product_container["product_name"] = product_name_query[0].product_name
             product_container["mrp"] = product_name_query[0].price
+            product_container["manufacturer"] = product_name_query[0].manufacturer
+            product_container["packing"] = product_name_query[0].packing
             product_container_list.append(product_container)
 
         # returns list of tuples
