@@ -1155,6 +1155,7 @@ nav.main-menu .navbar-toggle {
     margin-top: 10px; 
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .5rem;
+    color: black;
 }
 .row {
     margin-left: 0;

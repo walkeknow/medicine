@@ -5,6 +5,7 @@
       #excel-container {
          width: 25%;
          position: fixed;
+         padding-bottom: 5px;
       }
       #excel-container.highlight {
          background: -webkit-linear-gradient(left, #1d86df 0%, #39b49a 100%);
@@ -14,6 +15,10 @@
          padding: 10px;
          border: 2px dashed white;
          border-radius: 5px;
+      }
+      input[type=file] {
+          margin: auto;
+          width: 235px;
       }
       .pane {
          padding: 20px;
@@ -37,6 +42,12 @@
          color: white;
          background: -webkit-linear-gradient(left, #1d86df 0%, #39b49a 100%);
          background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+      }
+      .cool-btn {
+         width: 100%;
+         padding: 6px 12px;
+         overflow: hidden;
+         margin-bottom: 10px;
       }
       #main-container {
          margin-top: 155px;
@@ -76,10 +87,10 @@
 {#          </form>#}
          <div class="col-xs-12 col-md-4 col-lg-5">
             <div class="pane" id="excel-container">
-                <form action="{% url 'upload-excel'%}" method="POST" enctype="multipart/form-data">
+                <form action="{% url 'upload-excel'%}" class="text-center" method="POST" enctype="multipart/form-data" >
 {#                    <input type="submit" value="Upload" />#}
                     {% csrf_token %}
-                    <div class="btn btn-light" type="submit">{{form}}</div>
+                    <div class="btn cool-btn btn-light text-center" type="submit">{{form}}</div>
                     <br>
                     {% csrf_token %}
                     <button class="btn btn-light upload">Submit</button>

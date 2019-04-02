@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="services" style="position: absolute; height: inherit; padding-bottom: 0;">
+    <div class="services" style="position: absolute; height: initial; padding-bottom: 0;">
         <div class="container result-container">
             <div class="heading heading-white" style="margin-top: 80px;">
                 <h2 style="color: white;">Results</h2>
@@ -17,8 +17,10 @@
                             <div id="product_container">
                                 <div class="row product">
                                     <div class="col-xs-12">
+                                        <div class="row">Manufacturer name: {{ product.manufacturer }}</div>
                                         <div class="row">Product name: {{ product.product_name }}</div>
                                         <div class="row">MRP: {{ product.mrp }}</div>
+                                        <div class="row">Packing: {{ product.packing }}</div>
                                         <div class="row">Batch No: {{ product.batch_number }}</div>
                                     </div>
                                 </div>
@@ -68,32 +70,6 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 80px;">
-            <div class="copyright-area wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="footer-text">
-                                <p>©<a id="tw" href="https://themewagon.com/" target="_blank"></a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="social">
-                                <ul class="social-links">
-                                    <li><a href=""><i class="fa fa-rss"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
